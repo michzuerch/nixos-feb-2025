@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   programs.helix = {
     enable = true;
-    catppuccin.enable = true;
 
     # https://docs.helix-editor.com/languages.html
     languages = {

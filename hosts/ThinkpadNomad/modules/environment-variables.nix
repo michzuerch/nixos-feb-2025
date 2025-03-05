@@ -17,7 +17,7 @@
     # environment.variables.CLIPBOARD_NOREMOTE = "1";
     CLIPBOARD_SILENT = "1";
 
-    OPENAI_API_KEY = "$cat(${config.sops.secrets.openai_api_key.path})";
+    #OPENAI_API_KEY = "$cat(${config.sops.secrets.openai_api_key.path})";
 
     EMAIL = "michzuerch@gmail.com";
     NAME = "Michael Zuercher";

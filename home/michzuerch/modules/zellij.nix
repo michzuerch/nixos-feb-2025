@@ -2,7 +2,6 @@
   programs.zellij = {
     enable = false;
     package = pkgs.zellij;
-    catppuccin.enable = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
     settings = {

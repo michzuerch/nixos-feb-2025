@@ -14,12 +14,10 @@
 
     bat = {
       enable = true;
-      catppuccin.enable = true;
     };
 
     fzf = {
       enable = true;
-      catppuccin.enable = true;
       defaultCommand = "fd --type f --hidden --no-ignore --follow --exclude .git";
       enableZshIntegration = true;
       enableFishIntegration = false;
@@ -52,7 +50,7 @@
       enableZshIntegration = true;
       enableFishIntegration = true;
       git = true;
-      icons = true;
+      icons = "auto";
     };
   };
 

@@ -161,30 +161,6 @@
         };
         modules = [
           ./hosts/installer/configuration.nix
-          ./hosts/installer/modules
-          catppuccin.nixosModules.catppuccin
-          home-manager.nixosModules.home-manager
-          nixos-cosmic.nixosModules.default
-          disko.nixosModules.disko
-          sops-nix.nixosModules.sops
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = {
-                inherit inputs;
-              };
-              backupFileExtension = "backup";
-              users = {
-                michzuerch = {
-                  imports = [
-                    catppuccin.homeManagerModules.catppuccin
-                    ./home/michzuerch/home.nix
-                  ];
-                };
-              };
-            };
-          }
         ];
       };
     };

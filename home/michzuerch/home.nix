@@ -2,7 +2,7 @@
   imports = [
     ./modules
   ];
-
+  programs.zsh.enable = true;
   home = {
     packages = with pkgs; [
       nautilus

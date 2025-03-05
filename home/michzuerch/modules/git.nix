@@ -7,7 +7,6 @@
       userEmail = "michzuerch@gmail.com";
       delta = {
         enable = true;
-        catppuccin.enable = true;
       };
       lfs.enable = true;
       #signing = {
@@ -37,7 +36,6 @@
     };
     lazygit = {
       enable = true;
-      catppuccin.enable = true;
     };
   };
   home.packages = with pkgs; [act github-desktop github-runner];

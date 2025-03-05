@@ -1,7 +1,6 @@
 _: {
   programs.alacritty = {
     enable = true;
-    catppuccin.enable = true;
     settings = {
       font = {size = 12;};
       window = {

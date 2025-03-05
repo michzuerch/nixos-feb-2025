@@ -4,7 +4,6 @@
     shell = "${pkgs.zsh}/bin/zsh";
     terminal = "tmux-256color";
     historyLimit = 10000;
-    catppuccin.enable = true;
     clock24 = true;
     shortcut = "a";
     baseIndex = 1;
