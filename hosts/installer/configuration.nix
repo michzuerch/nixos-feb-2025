@@ -4,20 +4,12 @@
   ...
 }: {
   imports = [
+   # "${modulesPath}/installer/cd-dvd/installation-cd-graphical-plasma5.nix"
     "${modulesPath}/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
   ];
 
   nixpkgs.config.pulseaudio = true;
 
-  services.xserver = {
-    enable = true;
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
-    };
-  };
-
-  services.displayManager.defaultSession = "xfce";
   environment.systemPackages = with pkgs; [
     neovim
     disko
@@ -58,6 +50,8 @@
 
 
   networking.networkmanager.enable = true;
+
+  isoImage.squashfsCompression = "gzip -Xcompression-level 1";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.hostPlatform = "x86_64-linux";
