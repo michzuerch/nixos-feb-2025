@@ -4,8 +4,8 @@
   ...
 }: {
   imports = [
-   # "${modulesPath}/installer/cd-dvd/installation-cd-graphical-plasma5.nix"
-    "${modulesPath}/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
+    "${modulesPath}/installer/cd-dvd/installation-cd-graphical-plasma5.nix"
+    #"${modulesPath}/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
   ];
 
   nixpkgs.config.pulseaudio = true;
