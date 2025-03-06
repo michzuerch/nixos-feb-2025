@@ -17,6 +17,14 @@
                 mountOptions = ["umask=0077"];
               };
             };
+            plainSwap = {
+              size = "16GB";
+              content = {
+                type = "swap";
+                discardPolicy = "both";
+                resumeDevice = true; # resume from hiberation from this device
+              };
+            };
             root = {
               size = "100%";
               content = {

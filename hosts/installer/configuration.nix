@@ -14,6 +14,9 @@
     neovim
     disko
     parted
+    gtop
+    yazi
+    fastfetch
     gh
   ];
 
@@ -47,7 +50,6 @@
       LC_TIME = "de_DE.UTF-8";
     };
   };
-
 
   networking.networkmanager.enable = true;
 
