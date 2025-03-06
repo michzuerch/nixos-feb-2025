@@ -18,6 +18,7 @@
     yazi
     fastfetch
     gh
+    bat
   ];
 
   console = {
