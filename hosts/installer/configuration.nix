@@ -12,6 +12,7 @@
   nixpkgs.config.pulseaudio = true;
 
   environment.systemPackages = with pkgs; [
+    alacritty
     neovim
     disko
     parted
