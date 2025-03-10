@@ -87,7 +87,6 @@
     inherit lib;
     formatter = forEachSystem (pkgs: pkgs.alejandra);
 
-    # Shell configured with packages that are typically only needed when working on or with nix-config.
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
 
     nixosConfigurations = {
@@ -133,9 +132,9 @@
           ./hosts/VM/modules
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
-          nixos-cosmic.nixosModules.default
+          #nixos-cosmic.nixosModules.default
           disko.nixosModules.disko
-          sops-nix.nixosModules.sops
+          #sops-nix.nixosModules.sops
           {
             home-manager = {
               useGlobalPkgs = true;

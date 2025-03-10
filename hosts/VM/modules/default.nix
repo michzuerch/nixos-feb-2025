@@ -1,16 +1,16 @@
 {
   imports = [
     ./audio.nix
-    ./bluetooth.nix
+    #./bluetooth.nix
     ./bootloader.nix
     ./cachix.nix
-    ./security.nix
+    #./security.nix
     ./environment-variables.nix
     ./fonts.nix
-    ./fwupd.nix
-    ./gc.nix
-    ./graphics.nix
-    ./hacking.nix
+    #./fwupd.nix
+    #./gc.nix
+    #./graphics.nix
+    #./hacking.nix
     ./info-fetchers.nix
     ./kernel.nix
     ./networking.nix
@@ -19,11 +19,11 @@
     ./nh.nix
     ./nix-settings.nix
     ./nix-tools.nix
-    ./lsp.nix
+    #./lsp.nix
     ./powermanagement.nix
-    ./ollama.nix
-    ./rust.nix
-    ./virtualisation.nix
+    #./ollama.nix
+    #./rust.nix
+    #./virtualisation.nix
     ./xdg.nix
   ];
 }
