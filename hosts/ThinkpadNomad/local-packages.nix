@@ -1,7 +1,10 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     gcc
-    kdePackages.kdenlive
+    git
+    gh
+    nh
+    #kdePacka
     # jetbrains.pycharm-professional
     # jre8
     # qemu
