@@ -1,17 +1,21 @@
 {
   imports = [
     ./audio.nix
-    #./bluetooth.nix
+    ./bluetooth.nix
     ./bootloader.nix
+    ./displaymanager.nix
     ./cachix.nix
-    #./security.nix
+    ./security.nix
     ./environment-variables.nix
     ./fonts.nix
-    #./fwupd.nix
-    #./gc.nix
-    #./graphics.nix
+    ./fwupd.nix
+    ./gc.nix
+    ./graphics.nix
     #./hacking.nix
     ./info-fetchers.nix
+    ./plasma.nix
+    ./hyprland.nix
+    ./i18n.nix
     ./kernel.nix
     ./networking.nix
     ./dns.nix

@@ -4,7 +4,6 @@
     git
     gh
     nh
-    #kdePacka
     # jetbrains.pycharm-professional
     # jre8
     # qemu

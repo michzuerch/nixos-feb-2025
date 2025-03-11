@@ -3,6 +3,8 @@
     defaultUserShell = pkgs.zsh;
     users.michzuerch = {
       isNormalUser = true;
+      hashedPassword = "$y$j9T$Jua4KwG1voqhAtaM6WsUd1$pzPAn5C5HGeMFaGIFcnkQ8.iPJOZQY/lvZfv/GWYob6
+";
       description = "Michi";
       shell = pkgs.zsh;
       extraGroups = [
