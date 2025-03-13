@@ -4,6 +4,7 @@
     ./bluetooth.nix
     ./bootloader.nix
     ./cachix.nix
+    ./documentation.nix
     ./displaymanager.nix
     ./security.nix
     ./environment-variables.nix

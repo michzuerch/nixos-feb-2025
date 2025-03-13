@@ -4,6 +4,7 @@
     ./bluetooth.nix
     ./bootloader.nix
     ./displaymanager.nix
+    ./documentation.nix
     ./cachix.nix
     ./security.nix
     ./environment-variables.nix
@@ -12,6 +13,7 @@
     ./gc.nix
     ./graphics.nix
     #./hacking.nix
+    ./i18n.nix
     ./info-fetchers.nix
     ./plasma.nix
     ./hyprland.nix
