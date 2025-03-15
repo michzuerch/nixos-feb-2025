@@ -12,7 +12,8 @@
       inter
       material-design-icons
       material-symbols
-      nerd-fonts.jetbrains-mono
+      #nerd-fonts.jetbrains-mono
+      nerdfonts
       noto-fonts
       rubik
     ];
