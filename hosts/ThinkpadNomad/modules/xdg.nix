@@ -1,7 +1,8 @@
 {pkgs, ...}: {
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+# Build error on first try
+    # extraPortals = [pkgs.xdg-desktop-portal-hyprland];
     config = {
       common = {
         default = [
