@@ -21,6 +21,7 @@
     fastfetch
     gh
     bat
+    ripgrep
   ];
 
   console = {
