@@ -22,6 +22,7 @@
     gh
     bat
     ripgrep
+    vscode
   ];
 
   console = {
@@ -62,5 +63,7 @@
   isoImage.squashfsCompression = "gzip -Xcompression-level 1";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "x86_64-linux";
 }
