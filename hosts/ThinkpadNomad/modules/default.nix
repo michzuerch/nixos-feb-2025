@@ -3,7 +3,6 @@
     ../../common/modules/audio.nix
     ../../common/modules/bluetooth.nix
     ../../common/modules/bootloader.nix
-    ../../common/modules/cachix.nix
     ../../common/modules/documentation.nix
     ../../common/modules/displaymanager.nix
     ../../common/modules/security.nix
@@ -27,7 +26,8 @@
     ../../common/modules/lsp.nix
     ../../common/modules/powermanagement.nix
     ../../common/modules/ollama.nix
-    ../../common/modules/rust.nix
+    #../../common/modules/rust.nix
+    ../../common/modules/rust-fenix.nix
     ../../common/modules/virtualisation.nix
     ../../common/modules/xdg.nix
   ];

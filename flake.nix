@@ -33,6 +33,10 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvix = {
       url = "github:michzuerch/nvix";
       inputs.nixpkgs.follows = "nixpkgs";
