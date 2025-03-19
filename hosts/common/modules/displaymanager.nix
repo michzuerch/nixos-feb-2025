@@ -11,10 +11,12 @@
       #displayManager.lightdm.enable = true;
       #displayManager.sddm.enable = true;
     };
-    displayManager.sddm = {
-      enable = true;
-      theme = "catppuccin-sddm";
+    displayManager = {
       defaultSession = "hyprland";
+      sddm = {
+        enable = true;
+        theme = "catppuccin-sddm";
+      };
     };
   };
   environment.systemPackages = [pkgs.catppuccin-sddm];
