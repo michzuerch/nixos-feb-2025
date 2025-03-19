@@ -1,4 +1,4 @@
-_: {
+{pkgs, ...}: {
   services = {
     xserver = {
       enable = true;
@@ -8,8 +8,14 @@ _: {
         variant = "";
         options = "";
       };
-      displayManager.lightdm.enable = true;
+      #displayManager.lightdm.enable = true;
+      #displayManager.sddm.enable = true;
     };
-    displayManager.defaultSession = "hyprland";
+    displayManager.sddm = {
+      enable = true;
+      theme = "catppuccin-sddm";
+      defaultSession = "hyprland";
+    };
   };
+  environment.systemPackages = [pkgs.catppuccin-sddm];
 }
