@@ -7,10 +7,12 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     dotDir = ".config/zsh";
-    initExtra = ''
+    /*
+       initExtra = ''
       if [[ -o interactive ]]; then
           export OPENAI_API_KEY=$(cat /run/secrets/openai_api_key)
       fi
     '';
+    */
   };
 }
