@@ -94,8 +94,11 @@
         gaps_in = 2;
         gaps_out = 4;
         border_size = 2;
-        "col.active_border" = "rgba(0, 0, 0, 0)";
-        "col.inactive_border" = "rgba(145, 190, 165, 0.32)";
+        "col.active_border" = "rgba(9742b5ee) rgba(9742b5ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
+
+        #"col.active_border" = "rgba(0, 0, 0, 0)";
+        #"col.inactive_border" = "rgba(145, 190, 165, 0.32)";
       };
 
       decoration = {
