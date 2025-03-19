@@ -11,6 +11,5 @@
     light.enable = true;
     mtr.enable = true;
     hyprland.enable = true;
-    #hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   };
 }

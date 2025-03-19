@@ -5,18 +5,16 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     plugins = [
       # inputs.hyprland-plugins.packages."${pkgs.system}".hyprexpo
     ];
-    xwayland = {
-      enable = true;
-    };
+    /*
     systemd = {
       enable = true;
       enableXdgAutostart = true;
       variables = ["-all"];
     };
+    */
     settings = {
       # "plugin:hyprexpo" = {
       #   columns = 3;
@@ -38,17 +36,47 @@
       # };
       "$mod" = "SUPER";
 
+      xwayland = {
+        force_zero_scaling = true;
+      };
+
+      env = [
+        "XCURSOR_SIZE,32"
+        "HYPRCURSOR_THEME,rose-pine-hyprcursor"
+        "WLR_NO_HARDWARE_CURSORs,1"
+        "GTK_THEME,adw-gtk3"
+        "HYPRCURSOR_SIZE,32"
+
+        # XDG
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DESKTOP,Hyprland"
+
+        # QT
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        "QT_QPA_PLATFORM,wayland;xcb"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "QT_QPA_PLATFORMTHEME,qt6ct"
+
+        # Toolkit
+        "SDL_VIDEODRIVER,wayland"
+        "_JAVA_AWT_WM_NONEREPARENTING,1"
+        "_JAVA_OPTIONS,-Dawt.useSystemAAFontSettings=on"
+        "JAVA_FONTS,/usr/share/fonts/TTF"
+        "CLUTTER_BACKEND,wayland"
+        "GDK_BACKEND,wayland,x11"
+
+        # Enabling firefox wayland
+        "BROWSER,firefox"
+        "MOZ_ENABLE_WAYLAND,1"
+
+        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
+      ];
+
       binds = {
         allow_workspace_cycles = false;
         focus_preferred_method = 1;
         workspace_center_on = 1;
-      };
-
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-        # no_gaps_when_only = 1;
-        use_active_for_splits = true;
       };
 
       input = {
@@ -66,53 +94,53 @@
         gaps_in = 2;
         gaps_out = 4;
         border_size = 2;
-        resize_on_border = true;
         "col.active_border" = "rgba(0, 0, 0, 0)";
         "col.inactive_border" = "rgba(145, 190, 165, 0.32)";
-        no_border_on_floating = true;
       };
 
       decoration = {
-        rounding = 10;
-        active_opacity = 0.9;
-        inactive_opacity = 0.7;
-        blur = {
-          size = 7;
-          passes = 3;
-          new_optimizations = "on";
-          xray = false;
-          ignore_opacity = true;
-          popups = true;
+        shadow = {
+          enabled = true;
+          range = 60;
+          render_power = 3;
+          color = "rgba(1E202966)";
+          offset = "1 2";
+          scale = 0.97;
         };
-        drop_shadow = true;
-        shadow_range = 10;
-        shadow_render_power = 1;
-        shadow_scale = 6;
-        shadow_offset = "2 6";
-        shadow_ignore_window = true;
+        rounding = 8;
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 3;
+        };
+        active_opacity = 0.9;
+        inactive_opacity = 0.5;
       };
 
       animations = {
         enabled = true;
-        bezier = [
-          "wind, 0.05, 0.9, 0.1, 1.05"
-          "winIn, 0.1, 1.1, 0.1, 1.1"
-          "winOut, 0.3, -0.3, 0, 1"
-          "linear, 1, 1, 1, 1"
-        ];
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         animation = [
-          "windows, 1, 6, wind, slide"
-          "windowsIn, 1, 6, winIn, popin"
-          "windowsOut, 1, 5, winOut, slide"
-          "windowsMove, 1, 5, wind, slide"
-          "fade, 1, 10, default"
-          "workspaces, 1, 5, wind"
+          "windows, 1, 7, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default"
         ];
       };
 
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
+      };
+
+      master = {
+        new_status = "master";
+      };
+
       gestures = {
-        workspace_swipe = true;
-        workspace_swipe_forever = false;
+        workspace_swipe = false;
       };
 
       misc = {
@@ -153,9 +181,6 @@
       ];
       exec = ["hyprpaper"];
       monitor = ",preferred,auto,1";
-      xwayland = {
-        force_zero_scaling = true;
-      };
       windowrule = [
         "float, file_progress"
         "float, confirm"
@@ -188,25 +213,7 @@
         "move 75 44%, title:^(Volume Control)$"
         "float, ^(blueberry.py)$"
       ];
-      windowrulev2 = [
-        "float,class:^(scratchpad)$"
-        "size 80% 85%,class:^(scratchpad)$"
-        "workspace special silent,class:^(scratchpad)$"
-        "center,class:^(scratchpad)$"
-      ];
-      master = {
-        #  new_is_master = true;
-      };
-      layerrule = [
-        "ignorezero, waybar"
-        "ignorezero, wofi"
-        "ignorezero, swaync-control-center"
-        "ignorezero, swaync-notification-window"
-        "blur, waybar"
-        "blur, wofi"
-        "blur, swaync-control-center"
-        "blur, swaync-notification-window"
-      ];
+
       bind = [
         "SUPER,Z,exec,pypr toggle term && hyprctl dispatch bringactivetotop"
         "SUPER SHIFT, X, exec, hyprpicker -a -n"
@@ -277,37 +284,6 @@
         "SUPER, mouse:272, movewindow"
         "SUPER, mouse:273, resizewindow"
       ];
-
-      env = [
-        "GTK_THEME,adw-gtk3"
-        "HYPRCURSOR_SIZE,64"
-        "HYPRCURSOR_THEME,rose-pine-hyprcursor"
-
-        # XDG
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-
-        # QT
-        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-        "QT_QPA_PLATFORM,wayland;xcb"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "QT_QPA_PLATFORMTHEME,qt6ct"
-
-        # Toolkit
-        "SDL_VIDEODRIVER,wayland"
-        "_JAVA_AWT_WM_NONEREPARENTING,1"
-        "_JAVA_OPTIONS,-Dawt.useSystemAAFontSettings=on"
-        "JAVA_FONTS,/usr/share/fonts/TTF"
-        "CLUTTER_BACKEND,wayland"
-        "GDK_BACKEND,wayland,x11"
-
-        # Enabling firefox wayland
-        "BROWSER,firefox"
-        "MOZ_ENABLE_WAYLAND,1"
-
-        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
-      ];
     };
   };
 
@@ -316,6 +292,7 @@
     tray = "always";
   };
 
+  /*
   systemd.user.sessionVariables = {
     GDK_BACKEND = "wayland,x11";
     QT_QPA_PLATFORM = "wayland;xcb";
@@ -336,6 +313,7 @@
     MOZ_ENABLE_WAYLAND = "1 firefox";
     XCURSORSIZE = 128;
   };
+  */
 
   home.packages = with pkgs; [
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
