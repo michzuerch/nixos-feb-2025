@@ -2,7 +2,6 @@
   imports = [
     ./audio.nix
     ./bluetooth.nix
-    ./bootloader.nix
     ./cachix.nix
     ./documentation.nix
     ./displaymanager.nix

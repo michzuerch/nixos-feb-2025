@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./disko.nix
+    ./bootloader.nix
     ./hardware-configuration.nix
     ./local-packages.nix
     ./users.nix

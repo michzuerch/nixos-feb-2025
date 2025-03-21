@@ -2,7 +2,6 @@
   imports = [
     ../../common/modules/audio.nix
     ../../common/modules/bluetooth.nix
-    ../../common/modules/bootloader.nix
     ../../common/modules/documentation.nix
     ../../common/modules/displaymanager.nix
     ../../common/modules/security.nix
