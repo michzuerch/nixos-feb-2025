@@ -6,10 +6,10 @@
     ./local-packages.nix
     ./users.nix
   ];
-  programs.zsh.enable = true;
   environment.systemPackages = [pkgs.home-manager];
 
   networking.hostName = "VM";
+  networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 

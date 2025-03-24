@@ -7,11 +7,10 @@
     ./users.nix
   ];
 
-  programs.zsh.enable = true;
-
   environment.systemPackages = [pkgs.home-manager];
 
   networking.hostName = "thinkpadnomad";
+  networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
