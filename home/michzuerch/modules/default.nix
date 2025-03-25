@@ -38,7 +38,7 @@
     ./wezterm.nix
     ./xdg.nix
     ./yazi.nix
-    #./zed-editor.nix
+    ./zed-editor.nix
     ./zellij.nix
     ./zoxide.nix
     ./zsh.nix

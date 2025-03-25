@@ -11,7 +11,7 @@
       displayManager.lightdm.enable = true;
       #displayManager.sddm.enable = true;
     };
-/*
+    /*
     displayManager = {
       defaultSession = "hyprland";
       sddm = {
@@ -19,7 +19,7 @@
         theme = "catppuccin-sddm";
       };
     };
-*/
+    */
   };
   environment.systemPackages = [pkgs.catppuccin-sddm];
 }
