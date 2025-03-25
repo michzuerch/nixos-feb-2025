@@ -9,7 +9,7 @@
 
   environment.systemPackages = [pkgs.home-manager];
 
-  networking.hostName = "thinkpadnomad";
+  networking.hostName = "ThinkpadNomad";
   networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
