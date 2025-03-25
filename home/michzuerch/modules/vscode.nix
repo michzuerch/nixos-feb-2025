@@ -1,5 +1,10 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    vscode-fhs
+_:{
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      dracula-theme.theme-dracula
+      bbenoist.nix
+      kamadorueda.alejandra
   ];
+  };
 }

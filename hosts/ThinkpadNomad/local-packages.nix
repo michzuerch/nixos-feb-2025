@@ -5,7 +5,7 @@
     gh
     nh
     gtop
-    ripfrep
+    ripgrep
     fzf
   ];
 }
