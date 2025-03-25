@@ -4,9 +4,8 @@
     git
     gh
     nh
-    # jetbrains.pycharm-professional
-    # jre8
-    # qemu
-    # quickemu
+    gtop
+    ripfrep
+    fzf
   ];
 }
