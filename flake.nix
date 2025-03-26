@@ -90,7 +90,7 @@
     inherit lib;
     formatter = forEachSystem (pkgs: pkgs.alejandra);
 
-    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
+    #devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
 
     nixosConfigurations = {
       ThinkpadNomad = lib.nixosSystem {
