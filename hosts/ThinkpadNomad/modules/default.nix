@@ -17,7 +17,7 @@
     ../../common/modules/info-fetchers.nix
     ../../common/modules/kernel.nix
     ../../common/modules/networking.nix
-    ../../common/modules/dns.nix
+    #../../common/modules/dns.nix
     ../../common/modules/firewall.nix
     ../../common/modules/nh.nix
     ../../common/modules/nix-settings.nix
