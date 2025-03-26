@@ -1,19 +1,24 @@
-#################### DevShell ####################
-#
-# Custom shell for bootstrapping on new hosts, modifying nix-config, and secrets management
-{
-  pkgs ?
-  # If pkgs is not defined, instantiate nixpkgs from locked commit
-  let
-    lock = (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.nixpkgs.locked;
-    nixpkgs = fetchTarball {
-      url = "https://github.com/nixos/nixpkgs/archive/${lock.rev}.tar.gz";
-      sha256 = lock.narHash;
-    };
-  in
-    import nixpkgs {overlays = [];},
-  ...
-}: {
+{pkgs ? import <nixpkgs> {}}:
+pkgs.mkShell {
+  # nativeBuildInputs is usually what you want -- tools you need to run
+  nativeBuildInputs = with pkgs.buildPackages; [
+    nil
+    alejandra
+    nh
+    libiconv
+    nix
+    cachix
+    home-manager
+    git
+    just
+    pre-commit
+    age
+    ssh-to-age
+    sops
+  ];
+}
+/*
+{pkgs, ...}: {
   default = pkgs.mkShell {
     NIX_CONFIG = "extra-experimental-features = nix-command flakes repl-flake";
     nativeBuildInputs = builtins.attrValues {
@@ -38,3 +43,5 @@
     };
   };
 }
+*/
+
