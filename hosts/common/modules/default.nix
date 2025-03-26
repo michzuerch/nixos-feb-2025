@@ -13,13 +13,13 @@
     ./i18n.nix
     ./plasma.nix
     ./hyprland.nix
-    ./graphics.nix
-    ./hacking.nix
+    #./graphics.nix
+    #./hacking.nix
     ./info-fetchers.nix
     ./kernel.nix
-    ./networking.nix
-    ./dns.nix
-    ./firewall.nix
+    #./networking.nix
+    #./dns.nix
+    #./firewall.nix
     ./nh.nix
     ./nix-settings.nix
     ./nix-tools.nix
