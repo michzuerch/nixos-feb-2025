@@ -4,15 +4,14 @@
   ...
 }: {
   imports = [
-    #"${modulesPath}/installer/cd-dvd/installation-cd-graphical-plasma5.nix"
     "${modulesPath}/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
-    #"${modulesPath}/installer/cd-dvd/installation-cd-graphical-gnome.nix"
   ];
 
   nixpkgs.config.pulseaudio = true;
 
   environment.systemPackages = with pkgs; [
     alacritty
+    alejandra
     neovim
     disko
     parted
@@ -22,6 +21,7 @@
     gh
     bat
     ripgrep
+    fzf
     vscode
   ];
 
@@ -32,7 +32,6 @@
   };
 
   programs = {
-    nm-applet.enable = true;
     zsh.enable = true;
     git.enable = true;
     dconf.enable = true;
@@ -57,8 +56,6 @@
       LC_TIME = "de_DE.UTF-8";
     };
   };
-
-  networking.networkmanager.enable = true;
 
   isoImage.squashfsCompression = "gzip -Xcompression-level 1";
 

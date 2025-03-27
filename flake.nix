@@ -37,8 +37,8 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvix = {
-      url = "github:michzuerch/nvix";
+    nvf = {
+      url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin = {
@@ -69,7 +69,7 @@
     nixpkgs,
     home-manager,
     rust-overlay,
-    nvix,
+    nvf,
     nixos-cosmic,
     catppuccin,
     rose-pine-hyprcursor,
@@ -107,6 +107,7 @@
         modules = [
           ./hosts/ThinkpadNomad/configuration.nix
           ./hosts/ThinkpadNomad/modules
+          nvf.nixosModules.default
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           nixos-cosmic.nixosModules.default
@@ -140,11 +141,12 @@
         modules = [
           ./hosts/VM/configuration.nix
           ./hosts/VM/modules
+          nvf.nixosModules.default
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
-          #nixos-cosmic.nixosModules.default
+          nixos-cosmic.nixosModules.default
           disko.nixosModules.disko
-          #sops-nix.nixosModules.sops
+          sops-nix.nixosModules.sops
           {
             home-manager = {
               useGlobalPkgs = true;
