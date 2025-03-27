@@ -83,13 +83,24 @@
   } @ inputs: let
     inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;
-    systems = ["x86_64-linux"];
-    forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
-    pkgsFor = lib.genAttrs systems (system: import nixpkgs {inherit system;});
+    pkgs = nixpkgs.legacyPackages."x86_64-linux";
   in {
     inherit lib;
-    formatter = forEachSystem (pkgs: pkgs.alejandra);
-    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
+    formatter.x86_64-linux = pkgs.alejandra;
+
+    devShells.x86_64-linux.default = pkgs.mkShell {
+      packages = with pkgs; [
+        git
+        gh
+        yazi
+        fastfetch
+        gtop
+      ];
+
+      env.LD_LIBRARY_PATH = lib.makeLibraryPath [
+        pkgs.libz
+      ];
+    };
 
     nixosConfigurations = {
       ThinkpadNomad = lib.nixosSystem {
