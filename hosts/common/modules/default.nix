@@ -2,7 +2,6 @@
   imports = [
     ./audio.nix
     ./bluetooth.nix
-    ./cachix.nix
     ./documentation.nix
     ./displaymanager.nix
     ./security.nix
@@ -18,7 +17,6 @@
     ./info-fetchers.nix
     ./kernel.nix
     #./networking.nix
-    #./dns.nix
     #./firewall.nix
     ./nh.nix
     ./nix-settings.nix
@@ -29,5 +27,6 @@
     ./rust.nix
     ./virtualisation.nix
     ./xdg.nix
+    ./zsh.nix
   ];
 }

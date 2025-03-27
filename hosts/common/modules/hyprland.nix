@@ -1,11 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   programs = {
     nm-applet.enable = true;
-    zsh.enable = true;
     git.enable = true;
     dconf.enable = true;
     light.enable = true;
