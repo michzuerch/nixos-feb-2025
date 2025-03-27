@@ -21,7 +21,6 @@
     ./nh.nix
     ./nix-settings.nix
     ./nix-tools.nix
-    ./lsp.nix
     ./powermanagement.nix
     ./ollama.nix
     ./rust.nix

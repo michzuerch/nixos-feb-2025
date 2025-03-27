@@ -58,8 +58,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = "github:danth/stylix";
-
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -77,7 +75,6 @@
     rose-pine-hyprcursor,
     nsearch,
     sops-nix,
-    stylix,
     disko,
     ...
   } @ inputs: let

@@ -22,7 +22,6 @@
     ../../common/modules/nh.nix
     ../../common/modules/nix-settings.nix
     ../../common/modules/nix-tools.nix
-    ../../common/modules/lsp.nix
     ../../common/modules/powermanagement.nix
     ../../common/modules/ollama.nix
     #../../common/modules/rust.nix

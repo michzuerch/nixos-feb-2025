@@ -1,28 +1,21 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    astro-language-server
-    # python311Packages.python-lsp-server
-    nodePackages_latest.nodemon
-    nodePackages_latest.typescript
-    nodePackages_latest.typescript-language-server
-    nodePackages_latest.vscode-langservers-extracted
-    nodePackages_latest.yaml-language-server
-    nodePackages_latest.dockerfile-language-server-nodejs
-    nodePackages_latest.bash-language-server
-    vue-language-server
-    sumneko-lua-language-server
+    hyprls
+    htmx-lsp2
     marksman
-    markdown-oxide
-    nil
-    zls
-    gopls
-    delve
+    yaml-language-server
+    vue-language-server
+    typescript-language-server
+    tailwindcss-language-server
+    systemd-language-server
+    svelte-language-server
+    nodePackages_latest.vscode-json-languageserver
+    sumneko-lua-language-server
     emmet-language-server
+    dockerfile-language-server-nodejs
     cmake-language-server
-    docker-compose-language-service
-    vscode-extensions.vadimcn.vscode-lldb
-    slint-lsp
-    terraform-ls
+    bash-language-server
+    astro-language-server
     ansible-language-server
     nixd
   ];

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./disko.nix
     ./bootloader.nix
@@ -11,6 +15,9 @@
 
   networking.hostName = "ThinkpadNomad";
   networking.networkmanager.enable = true;
+
+  zramSwap.enable = true;
+  swapDevices = lib.mkForce [];
 
   nixpkgs.config.allowUnfree = true;
 
