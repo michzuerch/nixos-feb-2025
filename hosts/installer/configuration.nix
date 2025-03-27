@@ -1,11 +1,16 @@
 {
   pkgs,
   modulesPath,
+  lib,
   ...
 }: {
   imports = [
     "${modulesPath}/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
+    "${modulesPath}/installer/cd-dvd/channel.nix"
   ];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = lib.mkForce ["btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" "bcachefs"];
 
   nixpkgs.config.pulseaudio = true;
 
@@ -23,6 +28,11 @@
     ripgrep
     fzf
     vscode
+    tmux
+    tree
+    nano
+    rsync
+    cryptsetup
   ];
 
   console = {
@@ -57,7 +67,9 @@
     };
   };
 
-  isoImage.squashfsCompression = "gzip -Xcompression-level 1";
+  isoImage.volumeID = lib.mkForce "nixos-live-michzuerch";
+  isoImage.isoName = lib.mkForce "nixos-live-michzuerch.iso";
+  isoImage.squashfsCompression = "zstd -Xcompression-level 6";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
