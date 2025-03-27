@@ -1,6 +1,11 @@
-_: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   # Nix Configuration
   nix = {
+    nixPath = ["nixpkgs={$inputs.nixpkgs}"];
     settings = {
       builders-use-substitutes = true;
       experimental-features = ["nix-command" "flakes"];

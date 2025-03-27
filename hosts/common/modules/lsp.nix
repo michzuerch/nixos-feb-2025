@@ -24,5 +24,6 @@
     slint-lsp
     terraform-ls
     ansible-language-server
+    nixd
   ];
 }
