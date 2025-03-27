@@ -16,13 +16,13 @@
     ../../common/modules/hacking.nix
     ../../common/modules/info-fetchers.nix
     ../../common/modules/kernel.nix
-    ../../common/modules/networking.nix
+    #../../common/modules/networking.nix
     #../../common/modules/dns.nix
-    ../../common/modules/firewall.nix
+    #../../common/modules/firewall.nix
     ../../common/modules/nh.nix
     ../../common/modules/nix-settings.nix
     ../../common/modules/nix-tools.nix
-    ../../common/modules/lsp.nix
+    #../../common/modules/lsp.nix
     ../../common/modules/powermanagement.nix
     ../../common/modules/ollama.nix
     #../../common/modules/rust.nix
