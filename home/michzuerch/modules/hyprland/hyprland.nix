@@ -8,13 +8,6 @@
     plugins = [
       # inputs.hyprland-plugins.packages."${pkgs.system}".hyprexpo
     ];
-    /*
-    systemd = {
-      enable = true;
-      enableXdgAutostart = true;
-      variables = ["-all"];
-    };
-    */
     settings = {
       # "plugin:hyprexpo" = {
       #   columns = 3;
@@ -41,11 +34,11 @@
       };
 
       env = [
-        "XCURSOR_SIZE,32"
+        "XCURSOR_SIZE,24"
         "HYPRCURSOR_THEME,rose-pine-hyprcursor"
         "WLR_NO_HARDWARE_CURSORs,1"
         "GTK_THEME,adw-gtk3"
-        "HYPRCURSOR_SIZE,32"
+        "HYPRCURSOR_SIZE,24"
 
         # XDG
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -64,13 +57,16 @@
         "_JAVA_OPTIONS,-Dawt.useSystemAAFontSettings=on"
         "JAVA_FONTS,/usr/share/fonts/TTF"
         "CLUTTER_BACKEND,wayland"
-        "GDK_BACKEND,wayland,x11"
+        "GDK_BACKEND,wayland"
 
         # Enabling firefox wayland
         "BROWSER,firefox"
         "MOZ_ENABLE_WAYLAND,1"
 
         "ELECTRON_OZONE_PLATFORM_HINT,wayland"
+
+        "TERM,alacritty"
+        "NIXOS_OZONE_WL,1"
       ];
 
       binds = {
@@ -177,7 +173,7 @@
         "nm-applet"
         "pypr"
         "hypridle"
-        "hyprctl setcursor rose-pine-hyprcursor 65"
+        "hyprctl setcursor rose-pine-hyprcursor 24"
         "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'"
         "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
         "gsettings set org.gnome.desktop.interface cursor-theme 'rose-pine-hyprcursor'"
@@ -185,28 +181,20 @@
       exec = ["hyprpaper"];
       monitor = ",preferred,auto,1";
       windowrule = [
-        "float, file_progress"
-        "float, confirm"
-        "float, dialog"
-        "float, download"
-        "float, notification"
-        "float, error"
-        "float, splash"
-        "float, confirmreset"
-        "float, title:Open File"
-        "float, title:branchdialog"
-        "float, Lxappearance"
-        "float, Rofi"
-        "animation none,Rofi"
-        "float, viewnior"
-        "float, feh"
-        "float, pavucontrol-qt"
-        "float, pavucontrol"
-        "float, file-roller"
-        "fullscreen, wlogout"
-        "float, title:wlogout"
-        "fullscreen, title:wlogout"
-        "idleinhibit fullscreen, firefox"
+        "float, title:^(Open File)(.*)$"
+        "float, title:^(Select a File)(.*)$"
+        "float, title:^(Open Folder)(.*)$"
+        "float, title:^(Save As)(.*)$"
+        "float, title:^(Choose wallpaper)(.*)$"
+        "float, title:^(Library)(.*)$"
+        "float, title:^(File Upload)(.*)$"
+        "float, class:^(viewnior)$"
+        "float, class:^(feh)$"
+        "float, class:^(pavucontrol-qt)$"
+        "float, class:^(pavucontrol)$"
+        "float, class:^(file-roller)$"
+        "fullscreen, class:^(wlogout)$"
+        "idleinhibit fullscreen, class:^(firefox)$"
         "float, title:^(Media viewer)$"
         "float, title:^(Volume Control)$"
         "float, title:^(Picture-in-Picture)$"
@@ -216,6 +204,23 @@
         "move 75 44%, title:^(Volume Control)$"
         "float, ^(blueberry.py)$"
       ];
+
+      windowrulev2 = let
+        rulesForWindow = window: map (rule: "${rule},${window}");
+      in
+        []
+        # Specific window rules
+        ++ (rulesForWindow "title:^()$,class:^(steam)$" ["stayfocused" "minsize 1 1"])
+        ++ (rulesForWindow "class:^(sideterm)$" ["float" "move 60% 10" "size 750 350" "animation slide"])
+        # ++ (rulesForWindow "class:^(looking-glass-client)$" ["immediate"])
+        ++ (rulesForWindow "class:^(middleterm)$" ["float" "size 750 550" "animation slide"])
+        ++ (rulesForWindow "class:^(guifetch)$" ["float" "animation slide" "move 10 10"])
+        ++ (rulesForWindow "class:^(listen_blue)$" ["size 813 695" "float" "center"])
+        ++ (rulesForWindow "class:^(firefox)$" ["opacity 0.999 0.999"])
+        # General window rules
+        ++ (rulesForWindow "floating:0" ["rounding 0"])
+        ++ (rulesForWindow "floating:1" ["rounding 5"])
+        ++ (rulesForWindow "floating:0" ["noshadow"]);
 
       bind = [
         "SUPER,Z,exec,pypr toggle term && hyprctl dispatch bringactivetotop"
@@ -294,29 +299,6 @@
     enable = true;
     tray = "always";
   };
-
-  /*
-  systemd.user.sessionVariables = {
-    GDK_BACKEND = "wayland,x11";
-    QT_QPA_PLATFORM = "wayland;xcb";
-    QT_QPA_PLATFORM_THEME = "qt6ct";
-    QT_STYLE_OVERRIDE = "kvantum";
-    SDL_VIDEODRIVER = "wayland";
-    CLUTTER_BACKEND = "wayland";
-    NIXOS_OZONE_WL = "1";
-    XAUTHORITY = "$XDG_RUNTIME_DIR/Xauthority";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    T_AUTO_SCREEN_SCALE_FACTOR = 1;
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
-    _JAVA_AWT_WM_NONREPARENTING = 1;
-    WLR_NO_HARDWARE_CURSORS = "1";
-    MOZ_WEBRENDERER = "1";
-    MOZ_ENABLE_WAYLAND = "1 firefox";
-    XCURSORSIZE = 128;
-  };
-  */
 
   home.packages = with pkgs; [
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
