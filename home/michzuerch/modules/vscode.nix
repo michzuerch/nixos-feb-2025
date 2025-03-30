@@ -49,7 +49,6 @@
       github.vscode-github-actions
       formulahendry.auto-close-tag
       graphql.vscode-graphql-syntax
-      vue.vscode-typescript-vue-plugin
       vitaliymaz.vscode-svg-previewer
       ms-kubernetes-tools.vscode-kubernetes-tools
       github.vscode-pull-request-github
