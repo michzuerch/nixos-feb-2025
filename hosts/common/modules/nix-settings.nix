@@ -5,7 +5,7 @@
 }: {
   # Nix Configuration
   nix = {
-    nixPath = ["nixpkgs={$inputs.nixpkgs}"];
+    #nixPath = ["nixpkgs={$inputs.nixpkgs}"];
     settings = {
       builders-use-substitutes = true;
       experimental-features = ["nix-command" "flakes"];

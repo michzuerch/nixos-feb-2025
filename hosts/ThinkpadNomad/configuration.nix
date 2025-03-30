@@ -11,8 +11,6 @@
     ./users.nix
   ];
 
-  environment.systemPackages = [pkgs.home-manager];
-
   networking.hostName = "ThinkpadNomad";
   networking.networkmanager.enable = true;
 

@@ -35,20 +35,20 @@
     nix-index = {
       enable = true;
       enableZshIntegration = true;
-      enableFishIntegration = true;
+      enableFishIntegration = false;
     };
 
     direnv = {
       enable = true;
       enableZshIntegration = true;
       # enableFishIntegration = true;
-      nix-direnv.enable = true;
+      nix-direnv.enable = false;
     };
 
     eza = {
       enable = true;
       enableZshIntegration = true;
-      enableFishIntegration = true;
+      enableFishIntegration = false;
       git = true;
       icons = "auto";
     };

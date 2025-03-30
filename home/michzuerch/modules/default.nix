@@ -6,7 +6,7 @@
     ./catppuccin.nix
     ./f3.nix
     ./fastfetch.nix
-    ./fish.nix
+    #./fish.nix
     ./git.nix
     #./golang.nix
     #./graphic.nix
@@ -33,7 +33,7 @@
     ./tmux.nix
     #./torrent.nix
     ./typescript.nix
-    ./vscode.nix
+    ./vscodium.nix
     ./wallpapers.nix
     ./wezterm.nix
     ./xdg.nix
