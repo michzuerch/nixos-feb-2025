@@ -22,7 +22,7 @@
     podman-compose
     podman-desktop
     podman-tui
-    # terraform
+    #terraform
     just
     openstackclient
     opentofu

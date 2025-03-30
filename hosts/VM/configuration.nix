@@ -11,6 +11,8 @@
   networking.hostName = "VM";
   networking.networkmanager.enable = true;
 
+  programs.nix-ld.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "25.05";

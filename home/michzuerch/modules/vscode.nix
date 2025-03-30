@@ -54,6 +54,7 @@
       github.vscode-pull-request-github
       firefox-devtools.vscode-firefox-debug
       christian-kohler.npm-intellisense
+      redhat.vscode-yaml
     ];
   };
 }

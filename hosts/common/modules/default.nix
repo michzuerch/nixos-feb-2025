@@ -12,8 +12,8 @@
     ./i18n.nix
     ./plasma.nix
     ./hyprland.nix
-    #./graphics.nix
-    #./hacking.nix
+    ./graphics.nix
+    ./hacking.nix
     ./info-fetchers.nix
     ./kernel.nix
     #./networking.nix

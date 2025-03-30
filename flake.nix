@@ -53,6 +53,11 @@
     };
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 
+    firefox = {
+      url = "github:nix-community/flake-firefox-nightly";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";

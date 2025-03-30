@@ -19,6 +19,8 @@
   zramSwap.enable = true;
   swapDevices = lib.mkForce [];
 
+  programs.nix-ld.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "25.05";
