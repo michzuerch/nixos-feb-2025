@@ -55,6 +55,10 @@
       url = "github:nix-community/flake-firefox-nightly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,8 +77,6 @@
     nvf,
     nixos-cosmic,
     catppuccin,
-    rose-pine-hyprcursor,
-    nsearch,
     sops-nix,
     disko,
     ...
@@ -125,7 +127,7 @@
               users = {
                 michzuerch = {
                   imports = [
-                    catppuccin.homeManagerModules.catppuccin
+                    catppuccin.homeModules.catppuccin
                     ./home/michzuerch/home.nix
                   ];
                 };
@@ -159,7 +161,7 @@
               users = {
                 michzuerch = {
                   imports = [
-                    catppuccin.homeManagerModules.catppuccin
+                    catppuccin.homeModules.catppuccin
                     ./home/michzuerch/home.nix
                   ];
                 };

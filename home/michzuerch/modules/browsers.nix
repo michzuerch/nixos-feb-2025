@@ -12,8 +12,26 @@
     firefox = {
       enable = true;
       package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
+      languagePacks = ["en-US" "de"];
+      policies = {
+        DisableTelemetry = true;
+        DisableFirefoxStudies = true;
+        EnableTrackingProtection = {
+          Value = true;
+          Locked = true;
+          Cryptomining = true;
+          Fingerprinting = true;
+        };
+      };
       profiles = {
-        user = {
+        michzuerch = {
+          settings = {
+            "dom.security.https_only_mode" = true;
+            "browser.download.panel.shown" = true;
+            "identity.fxaccounts.enabled" = false;
+            "signon.rememberSignons" = false;
+          };
+
           search = {
             force = true;
             default = "ddg";
@@ -77,6 +95,18 @@
               };
             };
           };
+          userChrome = ''
+            /* some css */
+          '';
+
+          extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+            ublock-origin
+            wayback-machine
+            sponsorblock
+            darkreader
+            tridactyl
+            youtube-shorts-block
+          ];
         };
       };
     };
