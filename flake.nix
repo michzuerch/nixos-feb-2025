@@ -48,28 +48,17 @@
       url = "github:kamadorueda/alejandra/3.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nur.url = "github:nix-community/nur";
-
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
-
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     firefox = {
       url = "github:nix-community/flake-firefox-nightly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -92,13 +81,13 @@
   } @ inputs: let
     inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;
-    #pkgs = nixpkgs.legacyPackages."x86_64-linux";
+    pkgs = nixpkgs.legacyPackages."x86_64-linux";
   in {
     inherit lib;
-    formatter.x86_64-linux = nixpkgs.legacyPackages."x86_64-linux".alejandra;
+    formatter.x86_64-linux = pkgs.alejandra;
 
-    devShells.x86_64-linux.default = nixpkgs.legacyPackages."x86_64-linux".mkShell {
-      packages = with nixpkgs.legacyPackages."x86_64-linux"; [
+    devShells.x86_64-linux.default = pkgs.mkShell {
+      packages = with pkgs; [
         git
         gh
         yazi
@@ -107,7 +96,7 @@
       ];
 
       env.LD_LIBRARY_PATH = lib.makeLibraryPath [
-        nixpkgs.legacyPackages."x86_64-linux".libz
+        pkgs.libz
       ];
     };
 
