@@ -5,6 +5,7 @@
     ./cosmic-desktop.nix
     ./documentation.nix
     ./displaymanager.nix
+    ./flatpak.nix
     ./security.nix
     ./environment-variables.nix
     ./fonts.nix
