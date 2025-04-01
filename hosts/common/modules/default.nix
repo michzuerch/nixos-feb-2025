@@ -2,6 +2,7 @@
   imports = [
     ./audio.nix
     ./bluetooth.nix
+    ./cosmic-desktop.nix
     ./documentation.nix
     ./displaymanager.nix
     ./security.nix

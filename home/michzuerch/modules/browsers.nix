@@ -5,13 +5,19 @@
   ...
 }: {
   programs = {
-    chromium = {enable = true;};
+    chromium = {
+      enable = true;
+      extensions = [
+        {id = "kfidecgcdjjfpeckbblhmfkhmlgecoff";} # Svelte dev tools
+        {id = "pgamkpjkbfldnmemhcbekimfdnjcgkco";} # Tailwind css tools
+      ];
+    };
     brave = {enable = true;};
     qutebrowser = {enable = true;};
 
     firefox = {
       enable = true;
-      package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
+      package = inputs.firefox.packages.${pkgs.system}.firefox-devedition-bin;
       languagePacks = ["en-US" "de"];
       policies = {
         DisableTelemetry = true;
@@ -102,6 +108,12 @@
           extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
             ublock-origin
             wayback-machine
+            vue-js-devtools
+            rust-search-extension
+            search-by-image
+            proton-pass
+            proton-vpn
+
             sponsorblock
             darkreader
             tridactyl
