@@ -22,6 +22,10 @@
       kamadorueda.alejandra
       sumneko.lua
       hashicorp.hcl
+      jock.svg
+      golang.go
+
+      donjayamanne.githistory
       eamodio.gitlens
       mikestead.dotenv
       tyriar.sort-lines
@@ -53,12 +57,13 @@
       github.vscode-github-actions
       formulahendry.auto-close-tag
       graphql.vscode-graphql-syntax
-      vitaliymaz.vscode-svg-previewer
       ms-kubernetes-tools.vscode-kubernetes-tools
       github.vscode-pull-request-github
       firefox-devtools.vscode-firefox-debug
       christian-kohler.npm-intellisense
       redhat.vscode-yaml
+      formulahendry.code-runner
+      shd101wyy.markdown-preview-enhanced
     ];
 
     /**/

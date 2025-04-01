@@ -26,6 +26,7 @@
     #./obs-studio.nix
     ./pgbench.nix
     ./pyprland.nix
+    ./nix-index-comma.nix
     ./qt.nix
     ./ranger.nix
     ./sh.nix

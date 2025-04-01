@@ -48,7 +48,14 @@
       url = "github:kamadorueda/alejandra/3.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur.url = "github:nix-community/nur";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     firefox = {
@@ -79,6 +86,8 @@
     catppuccin,
     sops-nix,
     disko,
+    nix-index-database,
+    nur,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -112,6 +121,7 @@
           ./hosts/ThinkpadNomad/modules
           nvf.nixosModules.default
           catppuccin.nixosModules.catppuccin
+          nix-index-database.nixosModules.nix-index
           home-manager.nixosModules.home-manager
           nixos-cosmic.nixosModules.default
           disko.nixosModules.disko
@@ -127,6 +137,8 @@
               users = {
                 michzuerch = {
                   imports = [
+                    nur.modules.homeManager.default
+                    nix-index-database.hmModules.nix-index
                     catppuccin.homeModules.catppuccin
                     ./home/michzuerch/home.nix
                   ];
@@ -146,6 +158,7 @@
           ./hosts/VM/modules
           nvf.nixosModules.default
           catppuccin.nixosModules.catppuccin
+          nix-index-database.nixosModules.nix-index
           home-manager.nixosModules.home-manager
           nixos-cosmic.nixosModules.default
           disko.nixosModules.disko
@@ -161,7 +174,9 @@
               users = {
                 michzuerch = {
                   imports = [
+                    nur.modules.homeManager.default
                     catppuccin.homeModules.catppuccin
+                    nix-index-database.hmModules.nix-index
                     ./home/michzuerch/home.nix
                   ];
                 };
