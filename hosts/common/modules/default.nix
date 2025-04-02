@@ -2,7 +2,7 @@
   imports = [
     ./audio.nix
     ./bluetooth.nix
-    ./cosmic-desktop.nix
+    #./cosmic-desktop.nix
     ./documentation.nix
     ./displaymanager.nix
     ./flatpak.nix
@@ -20,6 +20,7 @@
     ./kernel.nix
     #./networking.nix
     #./firewall.nix
+    ./nur.nix
     ./nh.nix
     ./nix-settings.nix
     ./nix-tools.nix

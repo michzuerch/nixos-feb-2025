@@ -175,8 +175,8 @@
                 michzuerch = {
                   imports = [
                     nur.modules.homeManager.default
-                    catppuccin.homeModules.catppuccin
                     nix-index-database.hmModules.nix-index
+                    catppuccin.homeModules.catppuccin
                     ./home/michzuerch/home.nix
                   ];
                 };

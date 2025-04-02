@@ -1,12 +1,9 @@
 {
   pkgs,
   inputs,
+  nur,
   ...
-}: let
-  firefoxExtensionsNUR = with inputs.nur.packages."x86_64-linux"; [
-    repos.rycee.firefox-addons.flagfox
-  ];
-in {
+}: {
   programs = {
     chromium = {
       enable = true;
@@ -133,7 +130,7 @@ in {
             /* some css */
           '';
 
-          extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          extensions.packages = with nur.repos.rycee.firefox-addons; [
             #inputs.firefox-addons.packages."x86_64-linux".ublock-origin
             #inputs.firefox-addons.packages."x86_64-linux".wayback-machine
             #inputs.firefox-addons.packages."x86_64-linux".vue-js-devtools
