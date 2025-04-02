@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  nur,
   ...
 }: {
   programs = {
@@ -124,13 +123,22 @@
                 icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
                 definedAliases = ["@nw"];
               };
+              "Noogle" = {
+                urls = [
+                  {
+                    template = "https://noogle.dev?term={searchTerms}";
+                  }
+                ];
+                icon = "/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
+                definedAliases = ["@nog"];
+              };
             };
           };
           userChrome = ''
             /* some css */
           '';
 
-          extensions.packages = with nur.repos.rycee.firefox-addons; [
+          extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
             #inputs.firefox-addons.packages."x86_64-linux".ublock-origin
             #inputs.firefox-addons.packages."x86_64-linux".wayback-machine
             #inputs.firefox-addons.packages."x86_64-linux".vue-js-devtools

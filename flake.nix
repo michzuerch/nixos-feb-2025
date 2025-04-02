@@ -21,10 +21,10 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #nixos-cosmic = {
+    #  url = "github:lilyinstarlight/nixos-cosmic";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     nsearch = {
       url = "github:niksingh710/nsearch";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -82,7 +82,6 @@
     home-manager,
     rust-overlay,
     nvf,
-    nixos-cosmic,
     catppuccin,
     sops-nix,
     disko,
@@ -122,13 +121,13 @@
           nvf.nixosModules.default
           catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index
+          nur.modules.nixos.default
           home-manager.nixosModules.home-manager
-          nixos-cosmic.nixosModules.default
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
           {
             home-manager = {
-              useGlobalPkgs = true;
+              useGlobalPkgs = false;
               useUserPackages = true;
               extraSpecialArgs = {
                 inherit inputs;
@@ -159,13 +158,14 @@
           nvf.nixosModules.default
           catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index
+          nur.modules.nixos.default
+
           home-manager.nixosModules.home-manager
-          nixos-cosmic.nixosModules.default
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
           {
             home-manager = {
-              useGlobalPkgs = true;
+              useGlobalPkgs = false;
               useUserPackages = true;
               extraSpecialArgs = {
                 inherit inputs;
