@@ -6,24 +6,24 @@
     ./catppuccin.nix
     ./f3.nix
     ./fastfetch.nix
-    #./fish.nix
+    ./fish.nix
     ./git.nix
-    #./golang.nix
-    #./graphic.nix
+    ./golang.nix
+    ./graphic.nix
     ./gtk.nix
-    #./helix.nix
-    #./k9s.nix
+    ./helix.nix
+    ./k9s.nix
     ./kitty.nix
     ./language-servers.nix
-    #./latex.nix
+    ./latex.nix
     ./lf.nix
     ./mc.nix
-    #./meld.nix
-    #./messenger.nix
+    ./meld.nix
+    ./messenger.nix
     ./mission-center.nix
     ./multimedia.nix
     ./node.nix
-    #./obs-studio.nix
+    ./obs-studio.nix
     ./pgbench.nix
     ./pyprland.nix
     ./nix-index-comma.nix
@@ -32,7 +32,7 @@
     ./sh.nix
     ./starship.nix
     ./tmux.nix
-    #./torrent.nix
+    ./torrent.nix
     ./typescript.nix
     ./vscodium.nix
     ./wallpapers.nix

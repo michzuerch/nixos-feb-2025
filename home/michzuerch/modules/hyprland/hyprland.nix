@@ -34,11 +34,11 @@
       };
 
       env = [
-        "XCURSOR_SIZE,24"
+        "XCURSOR_SIZE,12"
         "HYPRCURSOR_THEME,rose-pine-hyprcursor"
-        "WLR_NO_HARDWARE_CURSORs,1"
+        "WLR_NO_HARDWARE_CURSORS,1"
         "GTK_THEME,adw-gtk3"
-        "HYPRCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,12"
 
         # XDG
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -90,11 +90,8 @@
         gaps_in = 2;
         gaps_out = 4;
         border_size = 2;
-        "col.active_border" = "rgba(9742b5ee) rgba(9742b5ee) 45deg";
+        "col.active_border" = " rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
-
-        #"col.active_border" = "rgba(0, 0, 0, 0)";
-        #"col.inactive_border" = "rgba(145, 190, 165, 0.32)";
       };
 
       decoration = {
@@ -143,7 +140,7 @@
       };
 
       misc = {
-        disable_hyprland_logo = false;
+        disable_hyprland_logo = true;
         focus_on_activate = true;
         layers_hog_keyboard_focus = true;
         mouse_move_enables_dpms = true;

@@ -2,31 +2,44 @@
   imports = [
     ./audio.nix
     ./bluetooth.nix
-    ./documentation.nix
+    ./cockroach.nix
+    ./database-tools.nix
     ./displaymanager.nix
-    ./flatpak.nix
-    ./security.nix
+    ./documentation.nix
     ./environment-variables.nix
+    #./firewall.nix
+    ./flatpak.nix
     ./fonts.nix
     ./fwupd.nix
     ./gc.nix
-    ./i18n.nix
-    ./plasma.nix
-    ./hyprland.nix
     ./graphics.nix
     ./hacking.nix
+    ./hyprland.nix
+    ./i18n.nix
     ./info-fetchers.nix
     ./kernel.nix
+    #./macchanger.nix
+    ./mariadb.nix
+    ./mongodb.nix
     #./networking.nix
-    #./firewall.nix
     ./nh.nix
     ./nix-settings.nix
     ./nix-tools.nix
-    ./powermanagement.nix
+    # ./nvf.nix
     ./ollama.nix
-    ./rust.nix
+    ./openssh.nix
+    ./plasma.nix
+    ./postgres.nix
+    ./powermanagement.nix
+    ./redis.nix
+    #./rust.nix
+    ./rust-fenix.nix
+    ./security.nix
+    ./syncthing.nix
     ./virtualisation.nix
+    ./wine.nix
     ./xdg.nix
+    # ./yubikey.nix
     ./zsh.nix
   ];
 }

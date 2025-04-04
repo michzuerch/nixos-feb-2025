@@ -138,7 +138,15 @@
             /* some css */
           '';
 
+          #extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+            ublock-origin
+            wayback-machine
+            vue-js-devtools
+            rust-search-extension
+            search-by-image
+            proton-pass
+            proton-vpn
             #inputs.firefox-addons.packages."x86_64-linux".ublock-origin
             #inputs.firefox-addons.packages."x86_64-linux".wayback-machine
             #inputs.firefox-addons.packages."x86_64-linux".vue-js-devtools
@@ -157,11 +165,11 @@
 
             # https://nur.nix-community.org/repos/rycee/
             # security
-            bitwarden
+            ## bitwarden
             #ublock-origin
             #canvasblocker
-            floccus
-            gesturefy
+            ##floccus
+            ##gesturefy
             #leisure
             #darkreader
             #mal-sync
