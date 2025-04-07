@@ -138,7 +138,6 @@
             /* some css */
           '';
 
-          #extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
             ublock-origin
             wayback-machine
@@ -147,42 +146,15 @@
             search-by-image
             proton-pass
             proton-vpn
-            #inputs.firefox-addons.packages."x86_64-linux".ublock-origin
-            #inputs.firefox-addons.packages."x86_64-linux".wayback-machine
-            #inputs.firefox-addons.packages."x86_64-linux".vue-js-devtools
-            #inputs.firefox-addons.packages."x86_64-linux".rust-search-extension
-            #inputs.firefox-addons.packages."x86_64-linux".search-by-image
-            #inputs.firefox-addons.packages."x86_64-linux".proton-pass
-            #inputs.firefox-addons.packages."x86_64-linux".proton-vpn
-
-            #inputs.firefox-addons.packages."x86_64-linux".sponsorblock
-            #inputs.firefox-addons.packages."x86_64-linux".darkreader
-            #inputs.firefox-addons.packages."x86_64-linux".tridactyl
-            #inputs.firefox-addons.packages."x86_64-linux".youtube-shorts-block
-
-            #inputs.nur.repos.mic92.hello-nur
-            #inputs.nur.repos.rycee.firefox-addons.flagfox
-
-            # https://nur.nix-community.org/repos/rycee/
-            # security
-            ## bitwarden
-            #ublock-origin
-            #canvasblocker
-            ##floccus
-            ##gesturefy
-            #leisure
-            #darkreader
-            #mal-sync
-            #stylus
+            darkreader
             firefox-color
-
-            #utility
-            #new-tab-override
-            #libredirect
-            #sponsorblock
-            #return-youtube-dislikes
-
-            #misc
+            about-sync
+            catppuccin-gh-file-explorer
+            clearcache
+            hacktools
+            i-dont-care-about-cookies
+            print-friendly-pdf
+            web-developer
           ];
         };
       };
