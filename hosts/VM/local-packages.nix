@@ -4,6 +4,8 @@
     gh
     git
     nh
+    yazi
+    mc
     #kdePackages.kdenlive
     # jetbrains.pycharm-professional
     # jre8

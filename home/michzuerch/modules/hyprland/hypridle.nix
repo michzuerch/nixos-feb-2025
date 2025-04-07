@@ -1,10 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home.file.".config/hypr/hypridle.conf".text = ''
     general {
       lock_cmd = $lock_cmd

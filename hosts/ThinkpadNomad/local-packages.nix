@@ -7,5 +7,7 @@
     gtop
     ripgrep
     fzf
+    yazi
+    mc
   ];
 }

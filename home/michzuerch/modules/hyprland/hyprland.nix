@@ -34,11 +34,11 @@
       };
 
       env = [
-        "XCURSOR_SIZE,12"
+        "XCURSOR_SIZE,24"
         "HYPRCURSOR_THEME,rose-pine-hyprcursor"
         "WLR_NO_HARDWARE_CURSORS,1"
         "GTK_THEME,adw-gtk3"
-        "HYPRCURSOR_SIZE,12"
+        "HYPRCURSOR_SIZE,24"
 
         # XDG
         "XDG_CURRENT_DESKTOP,Hyprland"
