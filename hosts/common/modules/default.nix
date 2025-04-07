@@ -3,8 +3,10 @@
     ./audio.nix
     ./bluetooth.nix
     ./cockroach.nix
+    ./cosmic-desktop.nix
     ./database-tools.nix
     ./displaymanager.nix
+    ./distrobox.nix
     ./documentation.nix
     ./environment-variables.nix
     #./firewall.nix
