@@ -21,10 +21,6 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-    #nixos-cosmic = {
-    #  url = "github:lilyinstarlight/nixos-cosmic";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
     nsearch = {
       url = "github:niksingh710/nsearch";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -58,6 +54,11 @@
     };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     firefox = {
       url = "github:nix-community/flake-firefox-nightly";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -82,11 +83,13 @@
     home-manager,
     rust-overlay,
     nvf,
+    nixos-cosmic,
     catppuccin,
     sops-nix,
     disko,
     nix-index-database,
     nur,
+    chaotic,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -122,6 +125,8 @@
           catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index
           nur.modules.nixos.default
+          chaotic.nixosModules.default
+          nixos-cosmic.nixosModules.default
           home-manager.nixosModules.home-manager
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
@@ -137,6 +142,7 @@
                 michzuerch = {
                   imports = [
                     nur.modules.homeManager.default
+                    chaotic.homeManagerModules.default
                     nix-index-database.hmModules.nix-index
                     catppuccin.homeModules.catppuccin
                     ./home/michzuerch/home.nix
@@ -159,7 +165,8 @@
           catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index
           nur.modules.nixos.default
-
+          chaotic.nixosModules.default
+          nixos-cosmic.nixosModules.default
           home-manager.nixosModules.home-manager
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
@@ -175,6 +182,7 @@
                 michzuerch = {
                   imports = [
                     nur.modules.homeManager.default
+                    chaotic.homeManagerModules.default
                     nix-index-database.hmModules.nix-index
                     catppuccin.homeModules.catppuccin
                     ./home/michzuerch/home.nix
