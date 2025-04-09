@@ -8,18 +8,21 @@
         variant = "";
         options = "";
       };
-      displayManager.lightdm.enable = true;
+      #displayManager.lightdm.enable = true;
       #displayManager.sddm.enable = true;
     };
-    /*
+
     displayManager = {
       defaultSession = "hyprland";
       sddm = {
         enable = true;
-        theme = "catppuccin-sddm";
+        #theme = "catppuccin-sddm";
+        theme = "sddm-astronaut-theme";
       };
     };
-    */
   };
-  environment.systemPackages = [pkgs.catppuccin-sddm];
+  environment.systemPackages = with pkgs; [
+    #catppuccin-sddm
+    sddm-astronaut
+  ];
 }

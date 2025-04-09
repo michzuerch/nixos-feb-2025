@@ -153,7 +153,7 @@
             clearcache
             hacktools
             i-dont-care-about-cookies
-            print-friendly-pdf
+            #print-friendly-pdf
             web-developer
           ];
         };
