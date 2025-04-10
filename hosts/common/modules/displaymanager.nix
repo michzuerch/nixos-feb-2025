@@ -18,6 +18,7 @@
         enable = true;
         #theme = "catppuccin-sddm";
         theme = "sddm-astronaut-theme";
+        extraPackages = [pkgs.kdePackages.qtmultimedia];
       };
     };
   };

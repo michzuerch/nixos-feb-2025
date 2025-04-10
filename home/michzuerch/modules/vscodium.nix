@@ -5,6 +5,9 @@
     mutableExtensionsDir = false;
     profiles.default.userSettings = {
       "editor.formatOnSave" = true;
+      "editor.fontFamily" = "JetBrains Mono";
+      "editor.fontSize" = 13;
+      "editor.fontLigatures" = true;
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
       "nix.serverPath" = "nixd";
@@ -65,7 +68,5 @@
       formulahendry.code-runner
       shd101wyy.markdown-preview-enhanced
     ];
-
-    /**/
   };
 }
