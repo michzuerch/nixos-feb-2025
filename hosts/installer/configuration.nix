@@ -17,22 +17,24 @@
   environment.systemPackages = with pkgs; [
     alacritty
     alejandra
-    neovim
+    cryptsetup
     disko
+    fastfetch
+    fzf
+    jql
     parted
     gtop
+    neovim
     yazi
-    fastfetch
     gh
     bat
     ripgrep
-    fzf
     vscode
     tmux
     tree
     nano
+    sbctl
     rsync
-    cryptsetup
   ];
 
   console = {

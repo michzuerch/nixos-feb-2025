@@ -29,6 +29,8 @@
       jock.svg
       golang.go
       mkhl.direnv
+      moshfeu.compare-folders
+      james-yu.latex-workshop
       donjayamanne.githistory
       eamodio.gitlens
       #mhutchie.git-graph
@@ -61,7 +63,9 @@
       bradlc.vscode-tailwindcss
       ms-azuretools.vscode-docker
       ms-vscode.cmake-tools
+      ms-vscode.makefile-tools
       jeff-hykin.better-nix-syntax
+      apollographql.vscode-apollo
       github.vscode-github-actions
       formulahendry.auto-close-tag
       graphql.vscode-graphql-syntax

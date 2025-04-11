@@ -107,8 +107,11 @@
         git
         gh
         yazi
+        ripgrep-all
+        jq
         fastfetch
         gtop
+        sbctl
       ];
 
       env.LD_LIBRARY_PATH = lib.makeLibraryPath [
