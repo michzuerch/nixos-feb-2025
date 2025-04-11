@@ -3,11 +3,17 @@
     enable = true;
     package = pkgs.vscodium;
     mutableExtensionsDir = false;
+    enableExtensionUpdateCheck = false;
+    enableUpdateCheck = false;
     profiles.default.userSettings = {
       "editor.formatOnSave" = true;
       "editor.fontFamily" = "JetBrains Mono";
       "editor.fontSize" = 13;
       "editor.fontLigatures" = true;
+      "editor.mouseWheelZoom" = true;
+      "editor.renderWhitespace" = "all";
+      "window.zoomLevel" = 2;
+
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
       "nix.serverPath" = "nixd";
@@ -78,6 +84,7 @@
       formulahendry.code-runner
       shd101wyy.markdown-preview-enhanced
       yzane.markdown-pdf
+      oderwat.indent-rainbow
     ];
   };
 }

@@ -22,6 +22,7 @@
     fastfetch
     fzf
     jql
+    pciutils
     parted
     gtop
     neovim

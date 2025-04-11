@@ -109,6 +109,9 @@
         yazi
         ripgrep-all
         jq
+        pciutils
+        tree
+        tealdeer
         fastfetch
         gtop
         sbctl
