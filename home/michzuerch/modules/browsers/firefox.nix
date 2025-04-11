@@ -141,6 +141,13 @@
           darkreader
           firefox-color
           about-sync
+          header-editor
+          print-to-pdf-document
+          prometheus-formatter
+          tomato-clock
+          torrent-control
+          unpaywall
+
           clearcache
           hacktools
           i-dont-care-about-cookies

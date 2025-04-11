@@ -20,6 +20,7 @@
       };
     };
     profiles.default.extensions = with pkgs.vscode-extensions; [
+      #vscodevim.vim
       catppuccin.catppuccin-vsc-icons
       jnoortheen.nix-ide
       kamadorueda.alejandra
@@ -27,9 +28,11 @@
       hashicorp.hcl
       jock.svg
       golang.go
-
+      mkhl.direnv
       donjayamanne.githistory
       eamodio.gitlens
+      #mhutchie.git-graph
+      hashicorp.terraform
       mikestead.dotenv
       tyriar.sort-lines
       vspacecode.whichkey
@@ -48,6 +51,7 @@
       yoavbls.pretty-ts-errors
       tauri-apps.tauri-vscode
       tamasfe.even-better-toml
+      hediet.vscode-drawio
       rust-lang.rust-analyzer
       naumovs.color-highlight
       james-yu.latex-workshop
@@ -56,6 +60,7 @@
       nefrob.vscode-just-syntax
       bradlc.vscode-tailwindcss
       ms-azuretools.vscode-docker
+      ms-vscode.cmake-tools
       jeff-hykin.better-nix-syntax
       github.vscode-github-actions
       formulahendry.auto-close-tag
@@ -64,9 +69,11 @@
       github.vscode-pull-request-github
       firefox-devtools.vscode-firefox-debug
       christian-kohler.npm-intellisense
+      mskelton.npm-outdated
       redhat.vscode-yaml
       formulahendry.code-runner
       shd101wyy.markdown-preview-enhanced
+      yzane.markdown-pdf
     ];
   };
 }
