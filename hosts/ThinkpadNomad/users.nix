@@ -19,6 +19,8 @@
         "video"
         "wireshark"
         "podman"
+        "lp"
+        "scanner"
       ];
       /*
       openssh.authorizedKeys.keys = [

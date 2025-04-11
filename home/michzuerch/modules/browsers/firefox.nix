@@ -23,10 +23,33 @@
         isDefault = true;
         name = "michzuerch";
         settings = {
+          "beacon.enabled" = false;
+          "browser.safebrowsing.malware.enabled" = false;
+          "browser.search.hiddenOneOffs" = "Google,Yahoo,Bing,Amazon.com,Twitter";
+          "browser.search.suggest.enabled" = false;
+          "browser.send_pings" = false;
           "dom.security.https_only_mode" = true;
           "browser.download.panel.shown" = true;
           "identity.fxaccounts.enabled" = false;
           "signon.rememberSignons" = false;
+          "geo.enabled" = false;
+          "gfx.webrender.all" = true;
+          "layout.css.devPixelsPerPx" = 1;
+          "media.navigator.enabled" = false;
+          "media.video_stats.enabled" = false;
+          "network.IDN_show_punycode" = true;
+          "network.allow-experiments" = false;
+          "network.dns.disablePrefetch" = true;
+          "network.http.referer.XOriginPolicy" = 2;
+          "network.http.referer.XOriginTrimmingPolicy" = 2;
+          "network.http.referer.trimmingPolicy" = 1;
+          "network.prefetch-next" = false;
+          "permissions.default.shortcuts" = 2; # Don't steal my shortcuts!
+          "privacy.donottrackheader.enabled" = true;
+          "privacy.donottrackheader.value" = 1;
+          "privacy.firstparty.isolate" = true;
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          "ui.textScaleFactor" = 100;
         };
 
         search = {
@@ -106,6 +129,8 @@
         '';
 
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          offline-qr-code-generator
+          reddit-enhancement-suite
           ublock-origin
           wayback-machine
           vue-js-devtools
@@ -116,11 +141,9 @@
           darkreader
           firefox-color
           about-sync
-          #catppuccin-gh-file-explorer
           clearcache
           hacktools
           i-dont-care-about-cookies
-          #print-friendly-pdf
           web-developer
         ];
       };

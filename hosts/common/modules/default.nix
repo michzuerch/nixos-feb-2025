@@ -36,6 +36,7 @@
     ./redis.nix
     #./rust.nix
     ./rust-fenix.nix
+    ./scanner.nix
     ./security.nix
     ./syncthing.nix
     ./virtualisation.nix
