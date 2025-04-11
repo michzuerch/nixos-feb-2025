@@ -54,6 +54,7 @@
     };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
+    flatpaks.url = "github:GermanBread/declarative-flatpak/dev";
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,6 +68,7 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -82,6 +84,7 @@
     nixpkgs,
     home-manager,
     rust-overlay,
+    flatpaks,
     nvf,
     nixos-cosmic,
     catppuccin,
@@ -127,6 +130,7 @@
           nur.modules.nixos.default
           chaotic.nixosModules.default
           nixos-cosmic.nixosModules.default
+          flatpaks.nixosModules.declarative-flatpak
           home-manager.nixosModules.home-manager
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
@@ -142,6 +146,7 @@
                 michzuerch = {
                   imports = [
                     nur.modules.homeManager.default
+                    flatpaks.homeManagerModules.declarative-flatpak
                     chaotic.homeManagerModules.default
                     nix-index-database.hmModules.nix-index
                     catppuccin.homeModules.catppuccin
@@ -165,6 +170,7 @@
           catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index
           nur.modules.nixos.default
+          flatpaks.nixosModules.declarative-flatpak
           chaotic.nixosModules.default
           nixos-cosmic.nixosModules.default
           home-manager.nixosModules.home-manager
@@ -182,6 +188,7 @@
                 michzuerch = {
                   imports = [
                     nur.modules.homeManager.default
+                    flatpaks.homeManagerModules.declarative-flatpak
                     chaotic.homeManagerModules.default
                     nix-index-database.hmModules.nix-index
                     catppuccin.homeModules.catppuccin

@@ -2,10 +2,10 @@
   imports = [
     ./alacritty.nix
     ./atiun.nix
-    ./browsers.nix
     ./catppuccin.nix
     ./f3.nix
     ./fastfetch.nix
+    ./flatpak.nix
     ./fish.nix
     ./git.nix
     ./golang.nix
@@ -43,5 +43,6 @@
     ./zoxide.nix
     ./zsh.nix
     ./hyprland
+    ./browsers
   ];
 }
