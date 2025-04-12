@@ -3,10 +3,13 @@
   config,
   ...
 }: {
-  # Setup Env Variables
   environment.variables = {
-    SPOTIFY_PATH = "${pkgs.spotify}/";
-    JDK_PATH = "${pkgs.jdk}/";
+    VDAPU_DRIVER = "va_gl";
+  };
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    # SPOTIFY_PATH = "${pkgs.spotify}/";
+    # JDK_PATH = "${pkgs.jdk}/";
     # NODEJS_PATH = "${pkgs.nodePackages_latest.nodejs}/";
 
     CI = "1";
@@ -21,7 +24,11 @@
 
     EMAIL = "michzuerch@gmail.com";
     NAME = "Michael Zuercher";
+    BROWSER = "firefox";
+    TERMINAL = "wezterm";
+
     EDITOR = "nvim";
     VISUAL = "nvim";
+    GSK_RENDERER = "gl";
   };
 }

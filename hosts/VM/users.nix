@@ -15,12 +15,15 @@
       extraGroups = [
         "networkmanager"
         "wheel"
-        "tss"
+        "libvirtd"
+        "scanner"
+        "lp"
         "video"
+        "tss"
         "wireshark"
         "podman"
-        "lp"
-        "scanner"
+        "input"
+        "audio"
       ];
       openssh.authorizedKeys.keys = [
         #"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILsyEfMjNUlwrf4NG3f6BWpP4uSzCfpC7V5jMqtiLfSQ michzuerch@localhost"

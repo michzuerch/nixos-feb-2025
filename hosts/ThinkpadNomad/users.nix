@@ -15,12 +15,15 @@
       extraGroups = [
         "networkmanager"
         "wheel"
-        "tss"
+        "libvirtd"
+        "scanner"
+        "lp"
         "video"
+        "tss"
         "wireshark"
         "podman"
-        "lp"
-        "scanner"
+        "input"
+        "audio"
       ];
       /*
       openssh.authorizedKeys.keys = [
