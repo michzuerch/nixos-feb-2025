@@ -2,6 +2,7 @@
   imports = [
     ./audio.nix
     ./bluetooth.nix
+    ./catppuccin.nix
     ./cockroach.nix
     ./cosmic-desktop.nix
     ./database-tools.nix

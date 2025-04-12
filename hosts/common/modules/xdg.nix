@@ -1,27 +1,13 @@
-{
+{pkgs, ...}: {
   xdg.portal = {
     enable = true;
-    config = {
-      common = {
-        default = [
-          "gtk"
-        ];
-      };
-      pantheon = {
-        default = [
-          "pantheon"
-          "gtk"
-        ];
-        "org.freedesktop.impl.portal.Secret" = [
-          "gnome-keyring"
-        ];
-      };
-      x-cinnamon = {
-        default = [
-          "xapp"
-          "gtk"
-        ];
-      };
-    };
+    wlr.enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    configPackages = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal
+    ];
   };
 }

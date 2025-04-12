@@ -6,6 +6,10 @@
     htop
     gtop
     kmon
+    nmon
+    glances
+    netdata
+    monit
     # vulkan-tools
     # opencl-info
     # clinfo

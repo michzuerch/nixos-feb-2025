@@ -29,7 +29,6 @@
     };
   };
   environment.systemPackages = with pkgs; [
-    #catppuccin-sddm
     sddm-astronaut
   ];
 }
