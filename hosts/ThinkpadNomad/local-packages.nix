@@ -4,7 +4,6 @@
     git
     gh
     nh
-    gtop
     ripgrep
     fzf
     yazi

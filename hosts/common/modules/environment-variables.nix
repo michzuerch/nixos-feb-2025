@@ -25,8 +25,7 @@
     EMAIL = "michzuerch@gmail.com";
     NAME = "Michael Zuercher";
     BROWSER = "firefox";
-    TERMINAL = "wezterm";
-
+    TERMINAL = "alacritty";
     EDITOR = "nvim";
     VISUAL = "nvim";
     GSK_RENDERER = "gl";

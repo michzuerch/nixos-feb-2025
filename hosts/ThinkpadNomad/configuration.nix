@@ -10,7 +10,6 @@
   networking.hostName = "ThinkpadNomad";
   networking.networkmanager.enable = true;
 
-  zramSwap.enable = true;
   swapDevices = lib.mkForce [];
 
   programs.nix-ld.enable = true;
