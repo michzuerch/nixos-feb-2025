@@ -8,17 +8,23 @@
         variant = "";
         options = "";
       };
-      #displayManager.lightdm.enable = true;
-      #displayManager.sddm.enable = true;
     };
 
     displayManager = {
       defaultSession = "hyprland";
+
       sddm = {
         enable = true;
-        #theme = "catppuccin-sddm";
+        #package = pkgs.kdePackages.sddm; #expected unique
         theme = "sddm-astronaut-theme";
-        extraPackages = [pkgs.kdePackages.qtmultimedia];
+        autoNumlock = true;
+        enableHidpi = true;
+        wayland.enable = true;
+        extraPackages = with pkgs; [
+          kdePackages.qtmultimedia
+          kdePackages.qtsvg
+          kdePackages.qtvirtualkeyboard
+        ];
       };
     };
   };

@@ -5,12 +5,20 @@
   ];
 
   services.flatpak = {
-    remotes = {
-      "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-      "flathub-beta" = "https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo";
-    };
-    #[ "flathub:app/org.kde.index//stable" "flathub-beta:app/org.kde.kdenlive/x86_64/stable" ]
-
-    packages = ["flathub-beta:app/org.kde.kdenlive/x86_64/stable"];
+    update.onActivation = true;
+    remotes = [
+      {
+        name = "flathub-beta";
+        location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+      }
+    ];
+    packages = [
+      {
+        appId = "com.brave.Browser";
+        origin = "flathub";
+      }
+      "com.obsproject.Studio"
+      "im.riot.Riot"
+    ];
   };
 }

@@ -3,8 +3,6 @@
     enable = true;
     package = pkgs.vscodium;
     mutableExtensionsDir = false;
-    enableExtensionUpdateCheck = false;
-    enableUpdateCheck = false;
     profiles.default.userSettings = {
       "editor.formatOnSave" = true;
       "editor.fontFamily" = "JetBrains Mono";

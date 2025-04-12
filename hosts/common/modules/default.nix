@@ -18,6 +18,7 @@
     ./hacking.nix
     ./hyprland.nix
     ./i18n.nix
+    ./inteldrivers.nix
     ./info-fetchers.nix
     ./kernel.nix
     #./macchanger.nix
@@ -44,5 +45,6 @@
     ./xdg.nix
     # ./yubikey.nix
     ./zsh.nix
+    ./zram.nix
   ];
 }

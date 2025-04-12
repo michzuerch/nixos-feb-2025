@@ -9,9 +9,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hardware = {
-      url = "github:NixOS/nixos-hardware/master";
-    };
+    hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,6 +19,7 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    hyprddm.url = "github:maotseantonio/hyprddm";
     nsearch = {
       url = "github:niksingh710/nsearch";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,11 +36,10 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin = {
-      url = "github:catppuccin/nix";
-    };
+    catppuccin.url = "github:catppuccin/nix";
     alejandra = {
-      url = "github:kamadorueda/alejandra/3.0.0";
+      #url = "github:kamadorueda/alejandra/3.0.0";
+      url = "github:kamadorueda/alejandra";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-index-database = {
@@ -54,7 +52,7 @@
     };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
-    flatpaks.url = "github:GermanBread/declarative-flatpak/dev";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,6 +66,10 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -77,6 +79,11 @@
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-anywhere = {
+      url = "github:numtide/nixos-anywhere";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.disko.follows = "disko";
+    };
   };
 
   outputs = {
@@ -84,7 +91,7 @@
     nixpkgs,
     home-manager,
     rust-overlay,
-    flatpaks,
+    nix-flatpak,
     nvf,
     nixos-cosmic,
     catppuccin,
@@ -100,7 +107,8 @@
     pkgs = nixpkgs.legacyPackages."x86_64-linux";
   in {
     inherit lib;
-    formatter.x86_64-linux = pkgs.alejandra;
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+    #formatter.x86_64-linux = pkgs.alejandra;
 
     devShells.x86_64-linux.default = pkgs.mkShell {
       packages = with pkgs; [
@@ -136,7 +144,7 @@
           nur.modules.nixos.default
           chaotic.nixosModules.default
           nixos-cosmic.nixosModules.default
-          flatpaks.nixosModules.declarative-flatpak
+          nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
@@ -152,10 +160,10 @@
                 michzuerch = {
                   imports = [
                     nur.modules.homeManager.default
-                    flatpaks.homeManagerModules.declarative-flatpak
                     chaotic.homeManagerModules.default
                     nix-index-database.hmModules.nix-index
                     catppuccin.homeModules.catppuccin
+                    nix-flatpak.homeManagerModules.nix-flatpak
                     ./home/michzuerch/home.nix
                   ];
                 };
@@ -176,7 +184,7 @@
           catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index
           nur.modules.nixos.default
-          flatpaks.nixosModules.declarative-flatpak
+          nix-flatpak.nixosModules.nix-flatpak
           chaotic.nixosModules.default
           nixos-cosmic.nixosModules.default
           home-manager.nixosModules.home-manager
@@ -194,10 +202,10 @@
                 michzuerch = {
                   imports = [
                     nur.modules.homeManager.default
-                    flatpaks.homeManagerModules.declarative-flatpak
                     chaotic.homeManagerModules.default
                     nix-index-database.hmModules.nix-index
                     catppuccin.homeModules.catppuccin
+                    nix-flatpak.homeManagerModules.nix-flatpak
                     ./home/michzuerch/home.nix
                   ];
                 };
