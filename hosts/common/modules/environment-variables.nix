@@ -1,8 +1,4 @@
 {
-  pkgs,
-  config,
-  ...
-}: {
   environment.variables = {
     VDAPU_DRIVER = "va_gl";
   };

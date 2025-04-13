@@ -6,7 +6,6 @@
       defaultNetwork.settings.dns_enabled = true;
     };
     libvirtd.enable = true;
-    # virtualbox.host.enable = true;
     waydroid.enable = true;
   };
 

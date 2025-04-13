@@ -10,11 +10,34 @@
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
+      DisableFormHistory = true;
+      DisableFirefoxAccounts = true;
+      NetworkPrediction = false;
+      UserMessaging = {
+        WhatsNew = false;
+        UrlbarInterventions = false;
+        FeatureRecommendations = false;
+        MoreFromMozilla = false;
+        SkipOnboarding = true;
+      };
       EnableTrackingProtection = {
         Value = true;
         Locked = true;
         Cryptomining = true;
         Fingerprinting = true;
+      };
+      HardwareAcceleration = true;
+      AutofillAddressEnabled = false;
+      AutofillCreditCardEnabled = false;
+      OfferToSaveLogins = false;
+      # OfferToSaveLoginsDefault = false;
+      PasswordManagerEnabled = false;
+      FirefoxHome = {
+        Search = true;
+        Pocket = false;
+        Snippets = false;
+        TopSites = false;
+        Highlights = false;
       };
     };
     profiles = {

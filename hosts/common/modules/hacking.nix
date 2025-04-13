@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  # programs.wireshark.enable = true;
+  programs.wireshark.enable = true;
 
   users.extraGroups.wireshark.members = ["michzuerch"];
 
@@ -8,20 +8,20 @@
     airgeddon
     bettercap
     burpsuite
-    # hash-identifier
-    # hashcat
-    # hashcat-utils
+    hash-identifier
+    hashcat
+    hashcat-utils
     hping
-    # john
-    # johnny
+    john
+    johnny
     kismet
-    # metasploit
+    metasploit
     nmap
     ngrep
     tcpdump
-    # snort
+    snort
     wavemon
-    # wifite2
+    wifite2
     wireguard-tools
     wireshark
     tshark

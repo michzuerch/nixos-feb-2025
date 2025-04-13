@@ -10,7 +10,7 @@
     ./distrobox.nix
     ./documentation.nix
     ./environment-variables.nix
-    #./firewall.nix
+    ./firewall.nix
     ./flatpak.nix
     ./fonts.nix
     ./fwupd.nix
@@ -19,13 +19,12 @@
     ./hacking.nix
     ./hyprland.nix
     ./i18n.nix
-    ./inteldrivers.nix
     ./info-fetchers.nix
     ./kernel.nix
-    #./macchanger.nix
+    ./macchanger.nix
     ./mariadb.nix
     ./mongodb.nix
-    #./networking.nix
+    ./networking.nix
     ./nh.nix
     ./nix-settings.nix
     ./nix-tools.nix
@@ -36,16 +35,15 @@
     ./postgres.nix
     ./powermanagement.nix
     ./redis.nix
-    #./rust.nix
-    ./rust-fenix.nix
+    ./rust.nix
     ./scanner.nix
     ./security.nix
     ./syncthing.nix
     ./virtualisation.nix
     ./wine.nix
     ./xdg.nix
-    # ./yubikey.nix
-    ./zsh.nix
+    ./yubikey.nix
     ./zram.nix
+    ./zsh.nix
   ];
 }

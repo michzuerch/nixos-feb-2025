@@ -10,12 +10,11 @@
     glances
     netdata
     monit
-    # vulkan-tools
-    # opencl-info
-    # clinfo
-    # vdpauinfo
-    # libva-utils
-    # nvtop
+    vulkan-tools
+    clinfo
+    vdpauinfo
+    libva-utils
+    #nvtop
     dig
     speedtest-rs
   ];

@@ -1,10 +1,21 @@
 {pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    vulkan-loader
+    vulkan-validation-layers
+    vulkan-tools
+  ];
+
   hardware = {
     graphics = {
       enable = true;
-
-      extraPackages = with pkgs; [libva vaapiVdpau libvdpau-va-gl];
-      extraPackages32 = with pkgs.pkgsi686Linux; [vaapiVdpau libvdpau-va-gl];
+      extraPackages = with pkgs; [
+        intel-media-driver
+        libva
+        vaapiVdpau
+        intel-compute-runtime
+        libva-utils
+        libvdpau-va-gl
+      ];
     };
     intel-gpu-tools.enable = true;
   };
