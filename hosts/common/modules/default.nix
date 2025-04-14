@@ -18,6 +18,7 @@
     ./graphics.nix
     ./hacking.nix
     ./hyprland.nix
+    ./hyprpanel.nix
     ./i18n.nix
     ./info-fetchers.nix
     ./kernel.nix

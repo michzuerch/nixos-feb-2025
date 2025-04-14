@@ -14,7 +14,10 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -105,10 +108,11 @@
     inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;
     pkgs = nixpkgs.legacyPackages."x86_64-linux";
+    system = "x86_64-linux"; # change to whatever your system should be
   in {
     inherit lib;
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
-    #formatter.x86_64-linux = pkgs.alejandra;
+    #formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+    formatter.x86_64-linux = pkgs.alejandra;
 
     devShells.x86_64-linux.default = pkgs.mkShell {
       packages = with pkgs; [
@@ -138,6 +142,7 @@
         modules = [
           ./hosts/ThinkpadNomad/configuration.nix
           ./hosts/ThinkpadNomad/modules
+          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           nvf.nixosModules.default
           catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index
@@ -153,6 +158,7 @@
               useGlobalPkgs = false;
               useUserPackages = true;
               extraSpecialArgs = {
+                inherit system;
                 inherit inputs;
               };
               backupFileExtension = "backup";
@@ -167,9 +173,8 @@
                     ./home/michzuerch/home.nix
                   ];
                 };
-              };
-            };
-          }
+                };
+                }
         ];
       };
 

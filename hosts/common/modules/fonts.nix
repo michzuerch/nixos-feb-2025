@@ -13,6 +13,7 @@
       material-design-icons
       material-symbols
       nerd-fonts.jetbrains-mono
+      nerd-fonts.caskaydia-cove
       #nerdfonts
       noto-fonts
       rubik
