@@ -5,6 +5,7 @@
     octofetch
     htop
     gtop
+    btop
     kmon
     nmon
     glances

@@ -107,14 +107,14 @@
   } @ inputs: let
     inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;
-    pkgs = nixpkgs.legacyPackages."x86_64-linux";
     system = "x86_64-linux"; # change to whatever your system should be
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
     inherit lib;
-    #formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
-    formatter.x86_64-linux = pkgs.alejandra;
+    #formatter.${system} = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+    formatter.${system} = pkgs.alejandra;
 
-    devShells.x86_64-linux.default = pkgs.mkShell {
+    devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         git
         gh
@@ -128,21 +128,17 @@
         gtop
         sbctl
       ];
-
-      env.LD_LIBRARY_PATH = lib.makeLibraryPath [
-        pkgs.libz
-      ];
     };
 
     nixosConfigurations = {
       ThinkpadNomad = lib.nixosSystem {
         specialArgs = {
-          inherit inputs outputs;
+          inherit inputs outputs system;
         };
         modules = [
           ./hosts/ThinkpadNomad/configuration.nix
           ./hosts/ThinkpadNomad/modules
-          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          #{nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           nvf.nixosModules.default
           catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index
@@ -150,37 +146,32 @@
           chaotic.nixosModules.default
           nixos-cosmic.nixosModules.default
           nix-flatpak.nixosModules.nix-flatpak
-          home-manager.nixosModules.home-manager
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = false;
               useUserPackages = true;
               extraSpecialArgs = {
-                inherit system;
-                inherit inputs;
+                inherit system outputs inputs;
               };
               backupFileExtension = "backup";
               users = {
                 michzuerch = {
                   imports = [
-                    nur.modules.homeManager.default
-                    chaotic.homeManagerModules.default
-                    nix-index-database.hmModules.nix-index
-                    catppuccin.homeModules.catppuccin
-                    nix-flatpak.homeManagerModules.nix-flatpak
                     ./home/michzuerch/home.nix
                   ];
                 };
-                };
-                }
+              };
+            };
+          }
         ];
       };
 
       VM = lib.nixosSystem {
         specialArgs = {
-          inherit inputs outputs;
+          inherit inputs outputs system;
         };
         modules = [
           ./hosts/VM/configuration.nix
@@ -195,6 +186,7 @@
           home-manager.nixosModules.home-manager
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = false;
@@ -206,11 +198,6 @@
               users = {
                 michzuerch = {
                   imports = [
-                    nur.modules.homeManager.default
-                    chaotic.homeManagerModules.default
-                    nix-index-database.hmModules.nix-index
-                    catppuccin.homeModules.catppuccin
-                    nix-flatpak.homeManagerModules.nix-flatpak
                     ./home/michzuerch/home.nix
                   ];
                 };
@@ -222,7 +209,7 @@
 
       installer = lib.nixosSystem {
         specialArgs = {
-          inherit inputs outputs;
+          inherit inputs outputs system;
         };
         modules = [
           ./hosts/installer/configuration.nix
