@@ -12,6 +12,7 @@
 
     displayManager = {
       defaultSession = "hyprland";
+      #displayManager.cosmic-greeter.enable = true;
 
       sddm = {
         enable = true;
@@ -30,5 +31,15 @@
   };
   environment.systemPackages = with pkgs; [
     sddm-astronaut
+    (pkgs.callPackage ./sddm-astronaut-theme.nix {
+      theme = "black_hole";
+      themeConfig = {
+        General = {
+          HeaderText = "Hi";
+          Background = "/home/michzuerch/Wallpapers/IMG_20180915_191524.png";
+          FontSize = "10.0";
+        };
+      };
+    })
   ];
 }

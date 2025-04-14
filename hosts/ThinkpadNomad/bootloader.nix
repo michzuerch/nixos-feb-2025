@@ -1,8 +1,7 @@
 {pkgs, ...}: {
-  # Bootloader.
   boot = {
-    # bootspec.enable = true;
-    # tmp.cleanOnBoot = true;
+    bootspec.enable = true;
+    tmp.cleanOnBoot = true;
     consoleLogLevel = 0;
     initrd = {
       enable = true;
@@ -25,7 +24,7 @@
     loader = {
       timeout = 0;
       systemd-boot.enable = true;
-      systemd-boot.memtest86.enable = false;
+      systemd-boot.memtest86.enable = true;
       efi.canTouchEfiVariables = true;
     };
     plymouth = {

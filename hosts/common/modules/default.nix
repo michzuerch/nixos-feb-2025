@@ -3,7 +3,7 @@
     ./audio.nix
     ./bluetooth.nix
     ./catppuccin.nix
-    ./cockroach.nix
+    #./cockroach.nix
     ./cosmic-desktop.nix
     ./database-tools.nix
     ./displaymanager.nix
@@ -22,8 +22,8 @@
     ./info-fetchers.nix
     ./kernel.nix
     ./macchanger.nix
-    ./mariadb.nix
-    ./mongodb.nix
+    #./mariadb.nix
+    #./mongodb.nix
     ./networking.nix
     ./nh.nix
     ./nix-settings.nix
@@ -32,15 +32,15 @@
     ./ollama.nix
     ./openssh.nix
     ./plasma.nix
-    ./postgres.nix
+    #./postgres.nix
     ./powermanagement.nix
-    ./redis.nix
+    #./redis.nix
     ./rust.nix
-    ./scanner.nix
+    # ./scanner.nix
     ./security.nix
     ./syncthing.nix
     ./virtualisation.nix
-    ./wine.nix
+    #./wine.nix
     ./xdg.nix
     ./yubikey.nix
     ./zram.nix
