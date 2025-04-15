@@ -138,7 +138,7 @@
         modules = [
           ./hosts/ThinkpadNomad/configuration.nix
           ./hosts/ThinkpadNomad/modules
-          #{nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           nvf.nixosModules.default
           catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index

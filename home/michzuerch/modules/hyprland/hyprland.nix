@@ -154,7 +154,7 @@
 
       exec-once = [
         "waybar"
-        "swaync"
+        #"swaync"
         "copyq --start-server"
         "lxqt-policykit-agent"
         "udiske"
@@ -309,6 +309,7 @@
     slurp
     sov
     squeekboard # virtual keyboard
+    swayosd
     wf-recorder
     wl-clipboard
     wlogout
