@@ -32,7 +32,7 @@
 
       * {
         border: none;
-        font-family: 'Fira Code', 'Symbols Nerd Font Mono';
+        font-family: 'CaskaydiaCove NF';
         font-size: 16px;
       }
 

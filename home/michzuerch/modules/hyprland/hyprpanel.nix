@@ -1,8 +1,13 @@
-{inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   nixpkgs.overlays = [
     inputs.hyprpanel.overlay
   ];
   imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
+  home.packages = [pkgs.hyprpanel];
 
   programs.hyprpanel = {
     # Enable the module.
@@ -21,27 +26,14 @@
 
     # Import a theme from './themes/*.json'.
     # Default: ""
-    #theme = "gruvbox_split";
+    #theme = "nord";
 
     # Override the final config with an arbitrary set.
     # Useful for overriding colors in your selected theme.
     # Default: {}
-    override = {
-      theme.bar.menus.text = "#123ABC";
-    };
-
-    # Configure bar layouts for monitors.
-    # See 'https://hyprpanel.com/configuration/panel.html'.
-    # Default: null
-    # layout = {
-    #   "bar.layouts" = {
-    #     "0" = {
-    #       left = ["dashboard" "workspaces"];
-    #       middle = ["media"];
-    #       right = ["volume" "systray" "notifications"];
-    #     };
-    #   };
-    # };
+    #override = {
+    #  theme.bar.menus.text = "#123ABC";
+    #};
 
     # Configure and theme almost all options from the GUI.
     # Options that require '{}' or '[]' are not yet implemented,
@@ -51,6 +43,16 @@
     settings = {
       bar.launcher.autoDetectIcon = true;
       bar.workspaces.show_icons = true;
+
+      layout = {
+        "bar.layouts" = {
+          "0" = {
+            left = ["dashboard" "workspaces"];
+            middle = ["windowtitle" "media"];
+            right = ["volume" "network" "systray" "notifications"];
+          };
+        };
+      };
 
       menus.clock = {
         time = {
@@ -63,11 +65,12 @@
       menus.dashboard.directories.enabled = false;
       menus.dashboard.stats.enable_gpu = true;
 
-      theme.bar.transparent = true;
-
-      theme.font = {
-        name = "CaskaydiaCove NF";
-        size = "16px";
+      theme = {
+        font = {
+          name = "CaskaydiaCove NF";
+          size = "16px";
+        };
+        bar.transparent = true;
       };
     };
   };
