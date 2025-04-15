@@ -1,15 +1,15 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    # digikam
+    digikam
     jellyfin-ffmpeg
-    # handbrake
-    # kodi-wayland
-    # libsForQt5.kdenlive
-    # losslesscut-bin
-    # mediathekview
+    handbrake
+    kodi-wayland
+    libsForQt5.kdenlive
+    losslesscut-bin
+    mediathekview
     mpv
     vlc
-    # yt-dlp
-    # tartube-yt-dlp
+    yt-dlp
+    tartube-yt-dlp
   ];
 }

@@ -22,7 +22,7 @@
 
     extraModulePackages = [];
     loader = {
-      timeout = 0;
+      timeout = 10;
       systemd-boot.enable = true;
       systemd-boot.memtest86.enable = true;
       efi.canTouchEfiVariables = true;
