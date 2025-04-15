@@ -6,8 +6,7 @@
 }: {
   # Apply the overlay to the package set
   nixpkgs.overlays = [
-    #inputs.rust-overlay.overlays.default
-    inputs.fenix.overlays.default
+    inputs.hyprpanel.overlay
   ];
   environment.systemPackages = [pkgs.hyprpanel];
 }
