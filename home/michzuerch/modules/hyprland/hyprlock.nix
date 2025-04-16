@@ -61,7 +61,7 @@
           swap_font_color = false; # see below
 
           #position = "0, -70";
-          position = "0, 0";
+          position = "0, -100";
           halign = "center";
           valign = "center";
         }

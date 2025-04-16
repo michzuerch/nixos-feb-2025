@@ -5,19 +5,59 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    # plugins = [
-    #   inputs.hyprland-plugins.packages."${pkgs.system}".hyprexpo
-    # ];
+    plugins = [
+      #inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors
+      #pkgs.hyprlandPlugins.hyprexpo
+    ];
     settings = {
-      # "plugin:hyprexpo" = {
-      #   columns = 3;
-      #   gap_size = 5;
-      #   bg_col = "rgb(111111)";
-      #   workspace_method = "center current"; # [center/first] [workspace] e.g. first 1 or center m+1
-      #   enable_gesture = true; # laptop touchpad, 4 fingers
-      #   gesture_distance = 300; # how far is the "max"
-      #   gesture_positive = true; # positive = swipe down. Negative = swipe up.
-      # };
+      "plugin:dynamic-cursors" = {
+        enabled = true;
+        mode = "stretch";
+
+        shake = {
+          # enables shake to find
+          enabled = true;
+
+          # use nearest-neighbour (pixelated) scaling when shaking
+          # may look weird when effects are enabled
+          nearest = true;
+
+          # controls how soon a shake is detected
+          # lower values mean sooner
+          threshold = 6.0;
+
+          # magnification level immediately after shake start
+          base = 4.0;
+          # magnification increase per second when continuing to shake
+          speed = 4.0;
+          # how much the speed is influenced by the current shake intensitiy
+          influence = 0.0;
+
+          # maximal magnification the cursor can reach
+          # values below 1 disable the limit (e.g. 0)
+          limit = 0.0;
+
+          # time in millseconds the cursor will stay magnified after a shake has ended
+          timeout = 2000;
+
+          # show cursor behaviour `tilt`, `rotate`, etc. while shaking
+          effects = false;
+
+          # enable ipc events for shake
+          # see the `ipc` section below
+          ipc = false;
+        };
+      };
+
+      "plugin:hyprexpo" = {
+        columns = 3;
+        gap_size = 5;
+        bg_col = "rgb(111111)";
+        workspace_method = "center current"; # [center/first] [workspace] e.g. first 1 or center m+1
+        enable_gesture = true; # laptop touchpad, 4 fingers
+        gesture_distance = 300; # how far is the "max"
+        gesture_positive = true; # positive = swipe down. Negative = swipe up.
+      };
 
       "$mod" = "SUPER";
 
@@ -156,7 +196,8 @@
         "waybar"
         #"swaync"
         "copyq --start-server"
-        "lxqt-policykit-agent"
+        #"lxqt-policykit-agent"
+        "systemctl --user start hyprpolkitagent"
         "udiske"
         "blueman-applet"
         "nm-applet"
@@ -211,62 +252,77 @@
         ++ (rulesForWindow "floating:1" ["rounding 5"])
         ++ (rulesForWindow "floating:0" ["noshadow"]);
 
-      bind = [
-        "SUPER,Z,exec,pypr toggle term && hyprctl dispatch bringactivetotop"
-        "SUPER SHIFT, X, exec, hyprpicker -a -n"
-        "CTRL ALT, L, exec, hyprlock"
-        #"SUPER SHIFT, Return, exec, alacritty -e fish"
-        "SUPER, Return, exec, alacritty"
-        "SUPER, E, exec, nemo"
-        "SUPER, D, exec, wofi --show drun --allow-images"
-        "SUPER, period, exec, wofi-emoji"
-        "SUPER, N, exec, swaync-client -t -sw"
-        "SUPER, M, exec, wlogout --protocol layer-shell"
-        "SUPER SHIFT, M, exit,"
-        ", Print, exec, grimblast --notify --cursor copysave output"
-        "ALT, Print, exec, grimblast --notify --cursor copysave screen"
-        "SUPER, Q, killactive,"
-        "SUPER SHIFT, Q, exit,"
-        "SUPER, F, fullscreen,"
-        "SUPER, Space, togglefloating,"
-        "SUPER, P, pseudo, "
-        "SUPER, S, togglesplit, "
-        "SUPER, left, movefocus, l"
-        "SUPER, right, movefocus, r"
-        "SUPER, up, movefocus, u"
-        "SUPER, down, movefocus, d"
-        "SUPER SHIFT, left, movewindow, l"
-        "SUPER SHIFT, right, movewindow, r"
-        "SUPER SHIFT, up, movewindow, u"
-        "SUPER SHIFT, down, movewindow, d"
-        "SUPER CTRL, left, resizeactive, -20 0"
-        "SUPER CTRL, right, resizeactive, 20 0"
-        "SUPER CTRL, up, resizeactive, 0 -20"
-        "SUPER CTRL, down, resizeactive, 0 20"
-        "SUPER, g, togglegroup,"
-        "SUPER, tab, changegroupactive,"
-        "SUPER, grave, togglespecialworkspace,"
-        "SUPERSHIFT, grave, movetoworkspace, special"
-        # "SUPER, O, hyprexpo:expo, toggle"
-        "SUPER, 1, workspace, 1"
-        "SUPER, 2, workspace, 2"
-        "SUPER, 3, workspace, 3"
-        "SUPER, 4, workspace, 4"
-        "SUPER, 5, workspace, 5"
-        "SUPER, 6, workspace, 6"
-        "SUPER ALT, up, workspace, e+1"
-        "SUPER ALT, down, workspace, e-1"
-        "SUPER SHIFT, 1, movetoworkspace, 1"
-        "SUPER SHIFT, 2, movetoworkspace, 2"
-        "SUPER SHIFT, 3, movetoworkspace, 3"
-        "SUPER SHIFT, 4, movetoworkspace, 4"
-        "SUPER SHIFT, 5, movetoworkspace, 5"
-        "SUPER SHIFT, 6, movetoworkspace, 6"
-        "SUPER, mouse_down, workspace, e+1"
-        "SUPER, mouse_up, workspace, e-1"
-        "ALT, Tab, cyclenext"
-        "ALT, Tab, bringactivetotop"
-      ];
+      bind =
+        [
+          "SUPER,Z,exec,pypr toggle term && hyprctl dispatch bringactivetotop"
+          "SUPER SHIFT, X, exec, hyprpicker -a -n"
+          "CTRL ALT, L, exec, hyprlock"
+          #"SUPER SHIFT, Return, exec, alacritty -e fish"
+          "SUPER, Return, exec, alacritty"
+          "SUPER, E, exec, nemo"
+          "SUPER, D, exec, wofi --show drun --allow-images"
+          "SUPER, period, exec, wofi-emoji"
+          "SUPER, N, exec, swaync-client -t -sw"
+          "SUPER, M, exec, wlogout --protocol layer-shell"
+          "SUPER SHIFT, M, exit,"
+          ", Print, exec, grimblast --notify --cursor copysave output"
+          "ALT, Print, exec, grimblast --notify --cursor copysave screen"
+          "SUPER, Q, killactive,"
+          "SUPER SHIFT, Q, exit,"
+          "SUPER, F, fullscreen,"
+          "SUPER, Space, togglefloating,"
+          "SUPER, P, pseudo, "
+          "SUPER, S, togglesplit, "
+          "SUPER, left, movefocus, l"
+          "SUPER, right, movefocus, r"
+          "SUPER, up, movefocus, u"
+          "SUPER, down, movefocus, d"
+          "SUPER SHIFT, left, movewindow, l"
+          "SUPER SHIFT, right, movewindow, r"
+          "SUPER SHIFT, up, movewindow, u"
+          "SUPER SHIFT, down, movewindow, d"
+          "SUPER CTRL, left, resizeactive, -20 0"
+          "SUPER CTRL, right, resizeactive, 20 0"
+          "SUPER CTRL, up, resizeactive, 0 -20"
+          "SUPER CTRL, down, resizeactive, 0 20"
+          "SUPER, g, togglegroup,"
+          "SUPER, tab, changegroupactive,"
+          "SUPER, grave, togglespecialworkspace,"
+          "SUPERSHIFT, grave, movetoworkspace, special"
+          #"SUPER, O, hyprexpo:expo, toggle"
+          #"SUPER, 1, workspace, 1"
+          #"SUPER, 2, workspace, 2"
+          #"SUPER, 3, workspace, 3"
+          #"SUPER, 4, workspace, 4"
+          #"SUPER, 5, workspace, 5"
+          #"SUPER, 6, workspace, 6"
+          "SUPER ALT, up, workspace, e+1"
+          "SUPER ALT, down, workspace, e-1"
+          #"SUPER SHIFT, 1, movetoworkspace, 1"
+          #"SUPER SHIFT, 2, movetoworkspace, 2"
+          #"SUPER SHIFT, 3, movetoworkspace, 3"
+          #"SUPER SHIFT, 4, movetoworkspace, 4"
+          #"SUPER SHIFT, 5, movetoworkspace, 5"
+          #"SUPER SHIFT, 6, movetoworkspace, 6"
+          "SUPER, mouse_down, workspace, e+1"
+          "SUPER, mouse_up, workspace, e-1"
+          "ALT, Tab, cyclenext"
+          "ALT, Tab, bringactivetotop"
+        ]
+        ++ (
+          # workspaces
+          # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
+          builtins.concatLists (builtins.genList (
+              i: let
+                ws = i + 1;
+              in [
+                "SUPER, code:1${toString i}, workspace, ${toString ws}"
+                "SUPER SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+              ]
+            )
+            9)
+        );
+
       binde = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
@@ -297,10 +353,10 @@
     grimblast
     gsettings-desktop-schemas
     hyprpicker
-    killall
+    hyprsysteminfo
+    hyprpolkitagent
     libsForQt5.filelight
     libsForQt5.qt5.qtwayland
-    lxqt.lxqt-policykit
     networkmanagerapplet
     pamixer
     pavucontrol
