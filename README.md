@@ -2,16 +2,25 @@
 
 Nixos configuration michzuerch 2024
 
-## Single line installer
+## Partitioning with disko
 
+Boot from the installer-iso and run
 ''bash
-nix-shell -p git --command "nix run github:michzuerch/nixos --experimental-features nix-command - --experimental-features flakes"
+sudo disko --mode disko --flake github:michzuerch/nixos-feb-2025#<hostname>
 ''
 
 ## nixos-install
 
+After the partitioning run the installer
+
 ''bash
-nixos-install --flake .#<host>
+sudo nixos-install --root /mnt --flake github:michzuerch/nixos-feb-2025#<hostname>
+''
+
+## Set the password for a user
+
+''bash
+sudo nixos-enter --root /mnt -c 'passwd <username>'
 ''
 
 ## build iso for installer
@@ -20,19 +29,13 @@ nixos-install --flake .#<host>
 nix build .#nixosConfigurations.installer.config.system.build.isoImage
 ''
 
-## install
-
-''bash
-nixos-install --impure --flake https://github.com/michzuerch/nixos#ThinkpadNomad
-''
-
-## installer with birdee
-
-sudo nix run github:nix-community/disko -- --mode disko --flake github:BirdeeHub/birdeeSystems#$hostname
-sudo nixos-install --flake github:BirdeeHub/birdeeSystems#$hostname
-
 ## sops
 
 ''bash
 sops secrets.yaml
 ''
+
+## Issues with systemd-boot
+
+1. The default entry is not selected in bootmenu. Press the 'd'-key to select your entry.
+2. Timeout doesnt count. Press 't'-key to start the timeout.
