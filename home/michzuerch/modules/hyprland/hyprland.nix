@@ -195,15 +195,12 @@
         "waybar"
         "swaync"
         "copyq --start-server"
-        #"systemctl --user start hyprpolkitagent"
+        "systemctl --user start hyprpolkitagent"
         "udiske"
         "blueman-applet"
         "nm-applet"
         "pypr"
         "hypridle"
-        "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'"
-        "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
-        "gsettings set org.gnome.desktop.interface cursor-theme 'rose-pine-hyprcursor'"
       ];
       exec = ["hyprpaper"];
       monitor = ",preferred,auto,1";

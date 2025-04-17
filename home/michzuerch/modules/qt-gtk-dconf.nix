@@ -50,14 +50,14 @@
     };
 
     theme = {
-      name = "catppuccin-macchiato-pink-compact";
-      package = pkgs.catppuccin-gtk.override {
-        accents = ["pink"];
-        size = "compact";
-        variant = "macchiato";
-      };
-      # name = "adw-gtk3-dark";
-      # package = pkgs.adw-gtk3;
+      # name = "catppuccin-macchiato-pink-compact";
+      # package = pkgs.catppuccin-gtk.override {
+      #   accents = ["pink"];
+      #   size = "compact";
+      #   variant = "macchiato";
+      # };
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
 
     gtk2 = {
@@ -93,5 +93,17 @@
   xresources.properties = {
     "Xft.dpi" = 150;
     "*.dpi" = 150;
+  };
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        area-screenshot = ["<Primary><Shift>Print"];
+      };
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        gtk-theme = "adw-gtk3-dark";
+      };
+    };
   };
 }

@@ -25,7 +25,7 @@
     ./pgbench.nix
     ./pyprland.nix
     ./nix-index-comma.nix
-    ./qt-gtk.nix
+    ./qt-gtk-dconf.nix
     ./ranger.nix
     ./sh.nix
     ./starship.nix
