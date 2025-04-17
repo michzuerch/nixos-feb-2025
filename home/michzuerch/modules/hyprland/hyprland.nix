@@ -194,7 +194,7 @@
 
       exec-once = [
         "waybar"
-        #"swaync"
+        "swaync"
         "copyq --start-server"
         #"lxqt-policykit-agent"
         "systemctl --user start hyprpolkitagent"

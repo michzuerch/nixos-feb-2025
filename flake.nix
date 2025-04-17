@@ -14,16 +14,15 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hypr-dynamic-cursors = {
-      url = "github:VirtCode/hypr-dynamic-cursors";
-      inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
-      #inputs.nixpkgs.follows = "nixpkgs"; # to make sure that the plugin is built for the correct version of hyprland
-    };
-    hyprddm.url = "github:maotseantonio/hyprddm";
+    # hyprpanel = {
+    #   url = "github:Jas-SinghFSU/HyprPanel";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # hypr-dynamic-cursors = {
+    #   url = "github:VirtCode/hypr-dynamic-cursors";
+    #   inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
+    # };
+    # hyprddm.url = "github:maotseantonio/hyprddm";
     nsearch = {
       url = "github:niksingh710/nsearch";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -112,7 +111,6 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     inherit lib;
-    #formatter.${system} = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     formatter.${system} = pkgs.alejandra;
 
     devShells.${system}.default = pkgs.mkShell {
@@ -139,7 +137,7 @@
         modules = [
           ./hosts/ThinkpadNomad/configuration.nix
           ./hosts/ThinkpadNomad/modules
-          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          # {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           nvf.nixosModules.default
           catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index

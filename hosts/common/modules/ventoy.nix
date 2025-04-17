@@ -1,8 +1,6 @@
 {pkgs, ...}: {
-  services.fwupd.enable = true;
-
   environment.systemPackages = with pkgs; [
-    fwupd
-    fwupd-efi
+    ventoy-bin-full
+    ventoy-full-qt
   ];
 }

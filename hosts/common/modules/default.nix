@@ -39,6 +39,7 @@
     # ./scanner.nix
     ./security.nix
     ./syncthing.nix
+    ./ventoy.nix
     ./virtualisation.nix
     #./wine.nix
     ./xdg.nix
