@@ -2,7 +2,6 @@
   imports = [
     ./alacritty.nix
     ./atiun.nix
-    ./catppuccin.nix
     ./f3.nix
     ./fastfetch.nix
     ./flatpak.nix

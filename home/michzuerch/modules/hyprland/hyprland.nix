@@ -196,14 +196,12 @@
         "waybar"
         "swaync"
         "copyq --start-server"
-        #"lxqt-policykit-agent"
-        "systemctl --user start hyprpolkitagent"
+        #"systemctl --user start hyprpolkitagent"
         "udiske"
         "blueman-applet"
         "nm-applet"
         "pypr"
         "hypridle"
-        "hyprctl setcursor rose-pine-hyprcursor 24"
         "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'"
         "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
         "gsettings set org.gnome.desktop.interface cursor-theme 'rose-pine-hyprcursor'"
@@ -346,7 +344,6 @@
   };
 
   home.packages = with pkgs; [
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     nemo-with-extensions
     copyq
     ffmpegthumbnailer

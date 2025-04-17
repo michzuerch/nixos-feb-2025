@@ -147,10 +147,6 @@
             };
           };
         };
-        userChrome = ''
-          /* some css */
-        '';
-
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           offline-qr-code-generator
           reddit-enhancement-suite
