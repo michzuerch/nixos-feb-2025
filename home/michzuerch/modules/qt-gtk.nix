@@ -3,18 +3,36 @@
   config,
   ...
 }: {
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-    package = pkgs.rose-pine-cursor;
-    #name = "Bibata-Modern-Ice";
-    name = "BreezeX-RoséPine";
-    size = 24;
+  home = {
+    pointerCursor = {
+      package = pkgs.catppuccin-cursors.latteDark;
+      name = "catppuccin-latte-dark-cursors";
+      size = 32;
+      gtk.enable = true;
+      x11.enable = true;
+    };
+
+    packages = with pkgs; [
+      papirus-folders
+      #kdePackages.qt6ct
+
+      nautilus
+    ];
   };
 
-  xresources.properties = {
-    "Xft.dpi" = 150;
-    "*.dpi" = 150;
+  qt = {
+    enable = true;
+    platformTheme.name = "kvantum";
+    style = {
+      name = "kvantum";
+
+      # catppuccin = {
+      #   enable = true;
+      #   apply = true;
+      #   accent = "blue";
+      #   flavor = "macchiato";
+      # };
+    };
   };
 
   gtk = {
@@ -70,9 +88,10 @@
         gtk-xft-rgba = "rgb";
       };
     };
-
     gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
-
-  home.packages = with pkgs; [nautilus];
+  xresources.properties = {
+    "Xft.dpi" = 150;
+    "*.dpi" = 150;
+  };
 }

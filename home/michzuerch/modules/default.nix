@@ -9,7 +9,6 @@
     ./git.nix
     ./golang.nix
     ./graphic.nix
-    ./gtk.nix
     ./helix.nix
     ./k9s.nix
     ./kitty.nix
@@ -26,7 +25,7 @@
     ./pgbench.nix
     ./pyprland.nix
     ./nix-index-comma.nix
-    ./qt.nix
+    ./qt-gtk.nix
     ./ranger.nix
     ./sh.nix
     ./starship.nix

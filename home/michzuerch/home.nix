@@ -7,7 +7,6 @@
     inputs.nur.modules.homeManager.default
     inputs.chaotic.homeManagerModules.default
     inputs.nix-index-database.hmModules.nix-index
-    inputs.catppuccin.homeModules.catppuccin
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     ./modules
   ];

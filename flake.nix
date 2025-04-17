@@ -39,9 +39,7 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin.url = "github:catppuccin/nix";
     alejandra = {
-      #url = "github:kamadorueda/alejandra/3.0.0";
       url = "github:kamadorueda/alejandra";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -54,7 +52,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
@@ -93,11 +90,9 @@
     self,
     nixpkgs,
     home-manager,
-    rust-overlay,
     nix-flatpak,
     nvf,
     nixos-cosmic,
-    catppuccin,
     sops-nix,
     disko,
     nix-index-database,
@@ -139,7 +134,6 @@
           ./hosts/ThinkpadNomad/modules
           # {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           nvf.nixosModules.default
-          catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index
           nur.modules.nixos.default
           chaotic.nixosModules.default
@@ -176,7 +170,6 @@
           ./hosts/VM/configuration.nix
           ./hosts/VM/modules
           nvf.nixosModules.default
-          catppuccin.nixosModules.catppuccin
           nix-index-database.nixosModules.nix-index
           nur.modules.nixos.default
           nix-flatpak.nixosModules.nix-flatpak
