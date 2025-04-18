@@ -2,6 +2,7 @@
   imports = [
     ./alacritty.nix
     ./atiun.nix
+    ./cursor.nix
     ./f3.nix
     ./fastfetch.nix
     ./flatpak.nix
@@ -34,7 +35,7 @@
     ./typescript.nix
     ./vscodium.nix
     ./wallpapers.nix
-    ./wezterm.nix
+    # ./wezterm.nix #Broken for intel vulcan
     ./xdg.nix
     ./yazi.nix
     ./zellij.nix

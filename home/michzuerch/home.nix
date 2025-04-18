@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  stylix,
   ...
 }: {
   imports = [
@@ -8,6 +9,7 @@
     inputs.chaotic.homeManagerModules.default
     inputs.nix-index-database.hmModules.nix-index
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
+    stylix.homeManagerModules.stylix
     ./modules
   ];
   home = {

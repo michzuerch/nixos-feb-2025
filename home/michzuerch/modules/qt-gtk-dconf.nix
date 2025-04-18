@@ -15,25 +15,25 @@
     packages = with pkgs; [
       papirus-folders
       #kdePackages.qt6ct
-
+      cheese #Sample for a gtk program
+      qtbitcointrader #Sample for a qt program
       nautilus
     ];
   };
 
   qt = {
     enable = true;
-    platformTheme.name = "kvantum";
-    style = {
-      name = "kvantum";
-
-      # catppuccin = {
-      #   enable = true;
-      #   apply = true;
-      #   accent = "blue";
-      #   flavor = "macchiato";
-      # };
-    };
+    platformTheme.name = "adwaita";
+    style.name = "adwaita-dark";
   };
+
+  # qt = {
+  #   enable = true;
+  #   platformTheme.name = "kvantum";
+  #   style = {
+  #     name = "kvantum";
+  #   };
+  # };
 
   gtk = {
     enable = true;
@@ -81,7 +81,6 @@
 
       extraConfig = {
         gtk-application-prefer-dark-theme = 1;
-
         gtk-xft-antialias = 1;
         gtk-xft-hinting = 1;
         gtk-xft-hintstyle = "hintfull";

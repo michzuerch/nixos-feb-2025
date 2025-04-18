@@ -68,19 +68,19 @@
       env = [
         "XCURSOR_SIZE,24"
         "WLR_NO_HARDWARE_CURSORS,1"
-        "GTK_THEME,adw-gtk3"
+        #"GTK_THEME,kvantum-dark"
         "HYPRCURSOR_SIZE,24"
         # XDG
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
+        #"XDG_CURRENT_DESKTOP,Hyprland"
+        #"XDG_SESSION_TYPE,wayland"
+        #"XDG_SESSION_DESKTOP,Hyprland"
 
         # QT
-        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-        "QT_QPA_PLATFORM,wayland;xcb"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "QT_QPA_PLATFORMTHEME,gkt2"
-        "QT_STYLE_OVERRIDE,gtk2"
+        #"QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        #"QT_QPA_PLATFORM,wayland;xcb"
+        #"QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        #"QT_QPA_PLATFORMTHEME,kvantum-dark"
+        #"QT_STYLE_OVERRIDE,kvantum-dark"
 
         # Toolkit
         "SDL_VIDEODRIVER,wayland"
