@@ -2,14 +2,14 @@ _: {
   programs.alacritty = {
     enable = true;
     settings = {
-      font = {size = 12;};
-      window = {
-        opacity = 0.7;
-        padding = {
-          x = 15;
-          y = 15;
-        };
-      };
+      # font = {size = 12;};
+      # window = {
+      #   opacity = 0.7;
+      #   padding = {
+      #     x = 15;
+      #     y = 15;
+      #   };
+      # };
       selection = {save_to_clipboard = true;};
     };
   };

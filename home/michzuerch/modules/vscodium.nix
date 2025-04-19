@@ -5,8 +5,6 @@
     mutableExtensionsDir = false;
     profiles.default.userSettings = {
       "editor.formatOnSave" = true;
-      "editor.fontFamily" = "JetBrains Mono";
-      "editor.fontSize" = 13;
       "editor.fontLigatures" = true;
       "editor.mouseWheelZoom" = true;
       "editor.renderWhitespace" = "all";

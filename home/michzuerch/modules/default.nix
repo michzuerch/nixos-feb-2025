@@ -2,32 +2,31 @@
   imports = [
     ./alacritty.nix
     ./atiun.nix
-    ./cursor.nix
+    #./cursor.nix
     ./f3.nix
     ./fastfetch.nix
     ./flatpak.nix
-    ./fish.nix
+    #./fish.nix
     ./git.nix
-    ./golang.nix
-    ./graphic.nix
+    #./golang.nix
+    #./graphic.nix
     ./helix.nix
     ./k9s.nix
     ./kitty.nix
     ./language-servers.nix
-    ./latex.nix
+    #./latex.nix
     ./lf.nix
     ./mc.nix
-    ./meld.nix
-    ./messenger.nix
-    ./mission-center.nix
-    ./multimedia.nix
-    ./node.nix
-    ./obs-studio.nix
-    ./pgbench.nix
-    ./pyprland.nix
+    #./meld.nix
+    #./messenger.nix
+    #./mission-center.nix
+    #./multimedia.nix
+    #./node.nix
+    #./obs-studio.nix
+    #./pgbench.nix
     ./nix-index-comma.nix
-    ./qt-gtk-dconf.nix
-    ./ranger.nix
+    #./qt-gtk-dconf.nix
+    #./ranger.nix
     ./sh.nix
     ./starship.nix
     ./tmux.nix
@@ -36,7 +35,7 @@
     ./vscodium.nix
     ./wallpapers.nix
     # ./wezterm.nix #Broken for intel vulcan
-    ./xdg.nix
+    # ./xdg.nix
     ./yazi.nix
     ./zellij.nix
     ./zoxide.nix

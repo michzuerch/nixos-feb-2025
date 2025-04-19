@@ -20,6 +20,7 @@
           size = 150;
           rounding = -1;
           border_size = 3;
+          border_color = "rgb(255, 255, 255)";
           rotate = 0;
           reload_time = -1;
           reload_cmd = "";
@@ -40,11 +41,16 @@
           dots_center = false;
           dots_rounding = -1; # -1 default circle, -2 follow input-field rounding
           dots_fade_time = 200; # Milliseconds until a dot fully fades in
+          outer_color = "rgb(151515)";
+          inner_color = "rgb(200, 200, 200)";
+          font_color = "rgb(10, 10, 10)";
           fade_on_empty = true;
           fade_timeout = 1000; # Milliseconds before fade_on_empty is triggered.
           placeholder_text = "<i>Input Password...</i>"; # Text rendered in the input box when it's empty.
           hide_input = false;
           rounding = -1; # -1 means complete rounding (circle/oval)
+          check_color = "rgb(204, 136, 34)";
+          fail_color = "rgb(204, 34, 34)"; # if authentication failed, changes outer_color and fail message color
           fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>"; # can be set to empty
           fail_timeout = 5000; # milliseconds before fail_text and fail_color disappears
           fail_transition = 300; # transition time in ms between normal outer_color and fail_color
@@ -54,6 +60,7 @@
           invert_numlock = false; # change color if numlock is off
           swap_font_color = false; # see below
 
+          #position = "0, -70";
           position = "0, -100";
           halign = "center";
           valign = "center";
@@ -64,6 +71,9 @@
         {
           monitor = "";
           text = "$TIME"; # Text rendered in the label.
+          color = "rgb(255,255,255)";
+          font_size = 130;
+          font_family = "Noto Sans";
 
           position = "0, 340";
           halign = "center";
@@ -72,6 +82,9 @@
         {
           monitor = "";
           text = "<b>  </b>"; # Text rendered in the label.
+          color = "rgb(255,255,255)";
+          font_size = 80;
+          font_family = "Noto Sans";
 
           position = "0, -400";
           halign = "center";

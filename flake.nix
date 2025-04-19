@@ -57,7 +57,7 @@
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    stylix.url = "github:danth/stylix";
     firefox = {
       url = "github:nix-community/flake-firefox-nightly";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -89,19 +89,10 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager,
-    nix-flatpak,
-    nvf,
-    nixos-cosmic,
-    sops-nix,
-    disko,
-    nix-index-database,
-    nur,
-    chaotic,
     ...
   } @ inputs: let
     inherit (self) outputs;
-    lib = nixpkgs.lib // home-manager.lib;
+    lib = nixpkgs.lib // inputs.home-manager.lib;
     system = "x86_64-linux"; # change to whatever your system should be
     pkgs = nixpkgs.legacyPackages.${system};
   in {
@@ -133,15 +124,16 @@
           ./hosts/ThinkpadNomad/configuration.nix
           ./hosts/ThinkpadNomad/modules
           # {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
-          nvf.nixosModules.default
-          nix-index-database.nixosModules.nix-index
-          nur.modules.nixos.default
-          chaotic.nixosModules.default
-          nixos-cosmic.nixosModules.default
-          nix-flatpak.nixosModules.nix-flatpak
-          disko.nixosModules.disko
-          sops-nix.nixosModules.sops
-          home-manager.nixosModules.home-manager
+          inputs.nvf.nixosModules.default
+          inputs.nix-index-database.nixosModules.nix-index
+          inputs.nur.modules.nixos.default
+          inputs.chaotic.nixosModules.default
+          inputs.nixos-cosmic.nixosModules.default
+          inputs.nix-flatpak.nixosModules.nix-flatpak
+          inputs.disko.nixosModules.disko
+          inputs.sops-nix.nixosModules.sops
+          inputs.stylix.nixosModules.stylix
+          inputs.home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = false;
@@ -169,16 +161,16 @@
         modules = [
           ./hosts/VM/configuration.nix
           ./hosts/VM/modules
-          nvf.nixosModules.default
-          nix-index-database.nixosModules.nix-index
-          nur.modules.nixos.default
-          nix-flatpak.nixosModules.nix-flatpak
-          chaotic.nixosModules.default
-          nixos-cosmic.nixosModules.default
-          home-manager.nixosModules.home-manager
-          disko.nixosModules.disko
-          sops-nix.nixosModules.sops
-          home-manager.nixosModules.home-manager
+          inputs.nvf.nixosModules.default
+          inputs.nix-index-database.nixosModules.nix-index
+          inputs.nur.modules.nixos.default
+          inputs.chaotic.nixosModules.default
+          inputs.nixos-cosmic.nixosModules.default
+          inputs.nix-flatpak.nixosModules.nix-flatpak
+          inputs.disko.nixosModules.disko
+          inputs.sops-nix.nixosModules.sops
+          inputs.stylix.nixosModules.stylix
+          inputs.home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = false;

@@ -3,24 +3,24 @@
     ./audio.nix
     ./bluetooth.nix
     #./cockroach.nix
-    ./cosmic-desktop.nix
-    ./database-tools.nix
+    #./cosmic-desktop.nix
+    #./database-tools.nix
     ./displaymanager.nix
-    ./distrobox.nix
+    #./distrobox.nix
     ./documentation.nix
     ./environment-variables.nix
     ./firewall.nix
-    ./flatpak.nix
+    #./flatpak.nix
     ./fonts.nix
     ./fwupd.nix
     ./gc.nix
-    ./graphics.nix
-    ./hacking.nix
+    #./graphics.nix
+    #./hacking.nix
     ./hyprland.nix
     ./i18n.nix
     ./info-fetchers.nix
     ./kernel.nix
-    ./macchanger.nix
+    #./macchanger.nix
     #./mariadb.nix
     #./mongodb.nix
     ./networking.nix
@@ -28,21 +28,22 @@
     ./nix-settings.nix
     ./nix-tools.nix
     # ./nvf.nix
-    ./ollama.nix
-    ./openssh.nix
-    ./plasma.nix
+    #./ollama.nix
+    #./openssh.nix
+    #./plasma.nix
     #./postgres.nix
     ./powermanagement.nix
     #./redis.nix
-    ./rust.nix
+    #./rust.nix
     # ./scanner.nix
     ./security.nix
-    ./syncthing.nix
-    ./ventoy.nix
-    ./virtualisation.nix
+    ./stylix.nix
+    #./syncthing.nix
+    #./ventoy.nix
+    #./virtualisation.nix
     #./wine.nix
-    ./xdg.nix
-    ./yubikey.nix
+    #./xdg.nix
+    #./yubikey.nix
     ./zram.nix
     ./zsh.nix
   ];

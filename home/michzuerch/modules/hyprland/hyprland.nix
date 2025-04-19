@@ -121,8 +121,6 @@
         gaps_in = 2;
         gaps_out = 4;
         border_size = 2;
-        "col.active_border" = " rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
       };
 
       decoration = {
@@ -130,7 +128,6 @@
           enabled = true;
           range = 60;
           render_power = 3;
-          color = "rgba(1E202966)";
           offset = "1 2";
           scale = 0.97;
         };

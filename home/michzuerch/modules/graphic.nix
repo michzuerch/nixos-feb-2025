@@ -4,7 +4,7 @@
     # font-manager
     gimp
     # glaxnimate
-    kdePackages.gwenview
+    #kdePackages.gwenview
     inkscape-with-extensions
     hypnotix
     # krita

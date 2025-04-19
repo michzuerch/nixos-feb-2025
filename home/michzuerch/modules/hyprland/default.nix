@@ -2,8 +2,9 @@
   imports = [
     ./hyprland.nix
     ./hyprpaper.nix
+    ./pyprland.nix
     # ./hyprpanel.nix
-    ./hyprlock.nix
+    #./hyprlock.nix
     ./waybar.nix
     ./hypridle.nix
     ./swaync.nix
