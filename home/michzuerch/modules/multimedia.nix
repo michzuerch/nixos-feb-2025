@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    digikam
+    #digikam #Failed to build
     jellyfin-ffmpeg
     handbrake
     kodi-wayland
