@@ -34,9 +34,7 @@
         init.defaultBranch = "main";
       };
     };
-    lazygit = {
-      enable = true;
-    };
+    lazygit.enable = true;
   };
   home.packages = with pkgs; [act github-desktop github-runner];
 }

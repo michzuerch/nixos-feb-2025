@@ -8,12 +8,10 @@
     ./flatpak.nix
     #./fish.nix
     ./git.nix
-    #./golang.nix
     #./graphic.nix
     ./helix.nix
     ./k9s.nix
     ./kitty.nix
-    ./language-servers.nix
     #./latex.nix
     ./lf.nix
     ./mc.nix
@@ -31,7 +29,6 @@
     ./starship.nix
     ./tmux.nix
     ./torrent.nix
-    ./typescript.nix
     ./vscodium.nix
     ./wallpapers.nix
     # ./wezterm.nix #Broken for intel vulcan
@@ -42,5 +39,6 @@
     ./zsh.nix
     ./hyprland
     ./browsers
+    ./languages
   ];
 }

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   programs.fastfetch = {
     enable = true;
     settings = {
@@ -188,7 +188,4 @@
       ];
     };
   };
-
-  home.packages = with pkgs; [
-  ];
 }

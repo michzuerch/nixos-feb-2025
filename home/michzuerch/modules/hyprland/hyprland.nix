@@ -326,7 +326,7 @@
 
   home.packages = with pkgs; [
     nemo-with-extensions
-    copyq
+    #copyq
     ffmpegthumbnailer
     grimblast
     gsettings-desktop-schemas

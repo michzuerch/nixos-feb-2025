@@ -27,11 +27,12 @@
 
     broot.enable = true;
 
-    gitui.enable = true;
+    gitui.enable = false;
 
     dircolors.enable = true;
 
-    #programs.command-not-found.enable = true;
+    #command-not-found.enable = true;
+
     nix-index = {
       enable = true;
       enableZshIntegration = true;
@@ -41,7 +42,7 @@
     direnv = {
       enable = true;
       enableZshIntegration = true;
-      # enableFishIntegration = true;
+      enableFishIntegration = true;
       nix-direnv.enable = false;
     };
 
