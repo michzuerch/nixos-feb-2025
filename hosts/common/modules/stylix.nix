@@ -39,5 +39,7 @@
       popups = 1.0;
     };
     polarity = "dark";
+    #targets.plymouth.logo = ./test.jpg;
+    #targets.plymouth.logoAnimated
   };
 }

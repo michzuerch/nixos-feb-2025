@@ -27,7 +27,7 @@
 
     broot.enable = true;
 
-    gitui.enable = false;
+    gitui.enable = false; #Temporary disbled for stylix
 
     dircolors.enable = true;
 

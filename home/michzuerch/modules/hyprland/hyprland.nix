@@ -1,6 +1,8 @@
 {
   pkgs,
   inputs,
+  lib,
+  config,
   ...
 }: {
   wayland.windowManager.hyprland = {
@@ -121,6 +123,7 @@
         gaps_in = 2;
         gaps_out = 4;
         border_size = 2;
+        #"col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base0E})";
       };
 
       decoration = {

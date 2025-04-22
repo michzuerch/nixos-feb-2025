@@ -1,77 +1,13 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   home = {
     packages = with pkgs; [
       papirus-folders
-      #kdePackages.qt6ct
+      kdePackages.qt6ct
       nautilus
     ];
   };
 
-  qt = {
-    enable = true;
-    #platformTheme.name = "adwaita";
-    #style.name = "adwaita-dark";
-  };
-
-  gtk = {
-    enable = true;
-
-    #   font = {
-    #     name = "Noto Sans";
-    #     package = pkgs.noto-fonts;
-    #     size = 11;
-    #   };
-
-    #   iconTheme = {
-    #     name = "Papirus-Dark";
-    #     package = pkgs.papirus-icon-theme;
-    #   };
-
-    # theme = {
-    #   name = "adw-gtk3-dark";
-    #   package = pkgs.adw-gtk3;
-    # };
-
-    #   gtk2 = {
-    #     configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    #     extraConfig = ''
-    #       gtk-xft-antialias=1
-    #       gtk-xft-hinting=1
-    #       gtk-xft-hintstyle="hintfull"
-    #       gtk-xft-rgba="rgb"
-    #     '';
-    #   };
-
-    #   gtk3 = {
-    #     bookmarks = [
-    #       "file://${config.home.homeDirectory}/Documents"
-    #       "file://${config.home.homeDirectory}/Downloads"
-    #       "file://${config.home.homeDirectory}/Music"
-    #       "file://${config.home.homeDirectory}/Pictures"
-    #       "file://${config.home.homeDirectory}/Videos"
-    #     ];
-
-    #     extraConfig = {
-    #       gtk-application-prefer-dark-theme = 1;
-    #       gtk-xft-antialias = 1;
-    #       gtk-xft-hinting = 1;
-    #       gtk-xft-hintstyle = "hintfull";
-    #       gtk-xft-rgba = "rgb";
-    #     };
-    #   };
-    #   gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
-  };
-  dconf = {
-    enable = true;
-    # settings = {
-    #   "org/gnome/desktop/interface" = {
-    #     color-scheme = "prefer-dark";
-    #     gtk-theme = "adw-gtk3-dark";
-    #   };
-    # };
-  };
+  qt.enable = true;
+  gtk.enable = true;
+  dconf.enable = true;
 }
