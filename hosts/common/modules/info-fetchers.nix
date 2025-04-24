@@ -10,7 +10,7 @@
     nmon
     glances
     netdata
-    monit
+    #monit
     vulkan-tools
     clinfo
     vdpauinfo

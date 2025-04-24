@@ -1,15 +1,17 @@
-{pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    gcc
-    gh
-    git
-    nh
-    yazi
-    mc
-    #kdePackages.kdenlive
-    # jetbrains.pycharm-professional
-    # jre8
-    # qemu
-    # quickemu
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  environment.systemPackages = [
+    pkgs.gcc
+    pkgs.git
+    pkgs.gh
+    pkgs.nh
+    pkgs.ripgrep
+    pkgs.fzf
+    pkgs.yazi
+    pkgs.mc
+    inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

@@ -49,8 +49,13 @@
       enable = true;
       enableZshIntegration = true;
       enableFishIntegration = false;
+      colors = "always";
       git = true;
-      icons = "auto";
+      icons = "always";
+      extraOptions = [
+        "--group-directories-first"
+        "--header"
+      ];
     };
   };
 
