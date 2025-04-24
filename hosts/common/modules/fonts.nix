@@ -1,6 +1,12 @@
 {pkgs, ...}: {
   fonts = {
-    fontconfig.enable = true;
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = ["Noto Serif"];
+        sansSerif = ["Noto Sans"];
+      };
+    };
     packages = with pkgs; [
       fira-code
       fira-code-symbols

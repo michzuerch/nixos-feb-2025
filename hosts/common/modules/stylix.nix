@@ -4,10 +4,16 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
     autoEnable = true;
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      package = pkgs.rose-pine-cursor;
+      name = "BreezeX-RosePine-Linux";
       size = 32;
     };
+    # cursor = {
+    #   package = pkgs.bibata-cursors;
+    #   name = "Bibata-Modern-Ice";
+    #   size = 32;
+    # };
+
     fonts = {
       sizes = {
         applications = 12;
@@ -20,12 +26,12 @@
         name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
       };
       serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
       };
       emoji = {
         package = pkgs.noto-fonts-emoji;
