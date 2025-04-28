@@ -16,12 +16,13 @@
       "$mainMod" = "SUPER";
       "$terminal" = "alacritty";
       "$fileManager" = "nemo";
-      "$menu" = "rofi";
 
       exec-once = [
         "waybar"
         "systemctl --user start hyprpolkitagent"
         "pypr"
+        "swaync"
+        "hyprpaper"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "nm-applet --indicator"
@@ -136,7 +137,7 @@
   };
   home.packages = with pkgs; [
     nemo-with-extensions
-    #copyq
+    copyq
     ffmpegthumbnailer
     grimblast
     gsettings-desktop-schemas

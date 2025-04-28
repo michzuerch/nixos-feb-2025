@@ -7,7 +7,7 @@
     enable = true;
     # Find your colorscheme with this gallery https://tinted-theming.github.io/tinted-gallery/
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
-    autoEnable = true;
+    autoEnable = false;
     cursor = {
       package = pkgs.rose-pine-cursor;
       name = "BreezeX-RosePine-Linux";
@@ -53,5 +53,13 @@
     polarity = "dark"; #or light
     #targets.plymouth.logo = ./test.jpg;
     #targets.plymouth.logoAnimated
+    targets = {
+      lightdm = {
+        enable = true;
+        useWallpaper = true;
+      };
+      chromium.enable = true;
+      console.enable = true;
+    };
   };
 }

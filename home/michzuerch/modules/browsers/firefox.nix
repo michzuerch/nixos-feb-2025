@@ -175,5 +175,4 @@
       };
     };
   };
-  stylix.targets.firefox.profileNames = ["michzuerch"];
 }
