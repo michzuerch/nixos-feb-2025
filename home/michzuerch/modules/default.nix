@@ -5,8 +5,9 @@
     ./cursor.nix
     ./f3.nix
     ./fastfetch.nix
-    ./flatpak.nix
     ./fish.nix
+    ./flatpak.nix
+    ./ghostty.nix
     ./git.nix
     ./graphic.nix
     ./helix.nix
@@ -26,8 +27,10 @@
     ./ranger.nix
     ./sh.nix
     ./starship.nix
+    ./stylix.nix
     ./tmux.nix
     ./torrent.nix
+    ./udiskie.nix
     ./vscodium.nix
     ./wallpapers.nix
     # ./wezterm.nix #Broken for intel vulcan

@@ -4,6 +4,10 @@
       enable = true;
       dockerCompat = true;
       defaultNetwork.settings.dns_enabled = true;
+      autoPrune = {
+        enable = true;
+        dates = "weekly";
+      };
     };
     libvirtd.enable = true;
     waydroid.enable = true;

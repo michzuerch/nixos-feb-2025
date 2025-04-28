@@ -9,6 +9,7 @@
     inputs.chaotic.homeManagerModules.default
     inputs.nix-index-database.hmModules.nix-index
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
+    # inputs.stylix.homeManagerModules.stylix
     ./modules
   ];
   home = {

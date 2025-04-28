@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   services = {
     xserver = {
       enable = true;
@@ -8,7 +12,10 @@
         variant = "";
         options = "";
       };
-      displayManager.lightdm.enable = true;
+      displayManager.lightdm = {
+        enable = true;
+        background = lib.mkDefault ./wallpapers/nixos-dark.jpg;
+      };
     };
 
     displayManager = {

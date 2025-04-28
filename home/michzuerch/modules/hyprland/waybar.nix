@@ -8,11 +8,12 @@
         height = 30;
         margin-top = 0;
         margin-bottom = 0;
-        margin-left = 0;
-        margin-right = 0;
-        modules-left = ["idle_inhibitor" "hyprland/workspaces"];
+        margin-left = 10;
+        margin-right = 10;
+        modules-left = ["hyprland/workspaces"];
         modules-center = [];
-        modules-right = ["pulseaudio" "backlight" "cpu" "memory" "network" "bluetooth" "battery" "clock" "custom/power" "tray"];
+        # modules-right = ["pulseaudio" "backlight" "cpu" "memory" "network" "bluetooth" "battery" "clock" "custom/power" "tray"];
+        modules-right = ["idle_inhibitor" "pulseaudio" "backlight" "network" "bluetooth" "battery" "clock" "custom/power" "tray"];
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -27,12 +28,11 @@
         };
 
         clock = {
-          format = " {:%a, %d %b, %I:%M %p}";
+          format = " {:%a, %d %b, %I:%M}";
           locale = "de_DE.UTF-8";
           timezone = "Europe/Busingen";
           tooltip = "true";
           tooltip-format = "{calendar}";
-          format-alt = "{:%I:%M %p}";
           calendar = {
             mode = "year";
             mode-mon-col = 3;

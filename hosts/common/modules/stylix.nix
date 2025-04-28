@@ -1,6 +1,11 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   stylix = {
     enable = true;
+    # Find your colorscheme with this gallery https://tinted-theming.github.io/tinted-gallery/
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
     autoEnable = true;
     cursor = {
@@ -44,7 +49,8 @@
       desktop = 0.8;
       popups = 1.0;
     };
-    polarity = "dark";
+    image = ../wallpapers/nixos-dark.jpg;
+    polarity = "dark"; #or light
     #targets.plymouth.logo = ./test.jpg;
     #targets.plymouth.logoAnimated
   };

@@ -12,6 +12,5 @@
     pkgs.fzf
     pkgs.yazi
     pkgs.mc
-    inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

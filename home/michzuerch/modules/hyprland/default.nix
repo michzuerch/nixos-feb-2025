@@ -1,14 +1,15 @@
 {
   imports = [
-    ./hyprland.nix
+    ./hyprland
     ./hyprpaper.nix
     ./pyprland.nix
     # ./hyprpanel.nix
-    #./hyprlock.nix
+    ./hyprlock.nix
     ./waybar.nix
     ./hypridle.nix
     ./swaync.nix
-    ./wofi.nix
+    # ./wofi.nix
+    ./rofi.nix
     ./wlogout.nix
   ];
 }

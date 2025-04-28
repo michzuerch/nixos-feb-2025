@@ -17,7 +17,6 @@
       timeout-critical = 0;
 
       widgets = [
-        "inhibitors"
         "dnd"
         "notifications"
       ];
