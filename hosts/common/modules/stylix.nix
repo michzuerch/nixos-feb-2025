@@ -60,6 +60,11 @@
       };
       chromium.enable = true;
       console.enable = true;
+      plymouth = {
+        enable = true;
+        # logo
+        # logoAnimated
+      };
     };
   };
 }
