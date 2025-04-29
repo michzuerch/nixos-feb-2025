@@ -1,30 +1,23 @@
 {
   imports = [
+    ./cli
     ./alacritty.nix
-    ./atiun.nix
     ./cursor.nix
-    ./f3.nix
-    ./fastfetch.nix
     ./fish.nix
     ./flatpak.nix
     ./ghostty.nix
-    ./git.nix
     ./graphic.nix
     ./helix.nix
-    ./k9s.nix
     ./kitty.nix
     ./latex.nix
-    ./lf.nix
-    ./mc.nix
+    ./libreoffice.nix
     ./meld.nix
     ./messenger.nix
     ./mission-center.nix
     ./multimedia.nix
     ./obs-studio.nix
     ./pgbench.nix
-    ./nix-index-comma.nix
     ./qt-gtk-dconf.nix
-    ./ranger.nix
     ./sh.nix
     ./starship.nix
     ./stylix.nix
@@ -35,10 +28,8 @@
     ./wallpapers.nix
     # ./wezterm.nix #Broken for intel vulcan
     ./xdg.nix
-    ./yazi.nix
     ./zellij.nix
     ./zoxide.nix
-    ./zsh.nix
     ./hyprland
     ./browsers
     ./languages

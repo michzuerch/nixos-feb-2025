@@ -5,15 +5,11 @@
       bat.enable = true;
       firefox = {
         enable = true;
-        # colorTheme.enable = true;
         profileNames = ["michzuerch"];
-        # profiles.michzuerch.extensions.force = true;
       };
       librewolf = {
         enable = true;
-        # colorTheme.enable = true;
-        # profileNames = ["michzuerch"];
-        # profiles.michzuerch.extensions.force = true;
+        profileNames = ["michzuerch"];
       };
       fish.enable = true;
       foot.enable = true;
