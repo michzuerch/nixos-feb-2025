@@ -1,4 +1,4 @@
-{lib, ...}: {
+{
   stylix = {
     targets = {
       alacritty.enable = true;
@@ -21,7 +21,7 @@
       hyprland.enable = true;
       hyprpaper.enable = false;
       hyprlock = {
-        enable = true;
+        enable = false;
         useWallpaper = false;
       };
       k9s.enable = true;
@@ -47,7 +47,7 @@
       };
       qutebrowser.enable = true;
       rofi.enable = true;
-      starship.enable = true;
+      starship.enable = false;
       swaync.enable = true;
       tmux.enable = true;
       vscode.enable = true;

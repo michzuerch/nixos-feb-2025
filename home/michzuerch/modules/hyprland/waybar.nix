@@ -11,8 +11,8 @@
         margin-left = 10;
         margin-right = 10;
         modules-left = ["hyprland/workspaces"];
-        modules-center = [];
-        # modules-right = ["pulseaudio" "backlight" "cpu" "memory" "network" "bluetooth" "battery" "clock" "custom/power" "tray"];
+        modules-center = ["hyprland/window"];
+        # modules-right = ["cpu" "memory" "network" "tray"];
         modules-right = ["idle_inhibitor" "pulseaudio" "backlight" "network" "bluetooth" "battery" "clock" "custom/power" "tray"];
 
         "hyprland/workspaces" = {
