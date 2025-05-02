@@ -23,7 +23,7 @@
     ./nh.nix
     ./nix-settings.nix
     ./nix-tools.nix
-    # ./nvf.nix
+    ./nvf.nix
     ./ollama.nix
     ./openssh.nix
     ./plasma.nix

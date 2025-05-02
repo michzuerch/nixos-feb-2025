@@ -15,6 +15,7 @@
     ./messenger.nix
     ./mission-center.nix
     ./multimedia.nix
+    ./nvf.nix
     ./obs-studio.nix
     ./pgbench.nix
     ./qt-gtk-dconf.nix
