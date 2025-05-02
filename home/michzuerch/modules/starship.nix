@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  lib,
+  config,
+  ...
+}: {
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
@@ -8,7 +12,8 @@
       format = lib.concatStrings [
         "[](color_orange)"
         "$os"
-        "$username"
+        "$hostname"
+        "$username (config.lib.stylix.colors.base00)"
         "[](bg:color_yellow fg:color_orange)"
         "$directory"
         "[](fg:color_yellow bg:color_aqua)"
@@ -31,7 +36,11 @@
         "$pixi"
         "[](fg:color_bg3 bg:color_bg1)"
         "$time"
+        "$cmd_duration"
         "[ ](fg:color_bg1)"
+        "$direnv"
+        "$nix_shell"
+        "$username"
         "$line_break"
         "$character"
       ];
@@ -40,7 +49,8 @@
 
       palettes = {
         gruvbox_dark = {
-          color_fg0 = "#fbf1c7";
+          # color_fg0 = "#fbf1c7";
+          color_fg0 = config.lib.stylix.colors.base00;
           color_bg1 = "#3c3836";
           color_bg3 = "#665c54";
           color_blue = "#458588";
@@ -61,40 +71,27 @@
         };
       };
 
-      # [os.symbols]
-      # Windows = "󰍲"
-      # Ubuntu = "󰕈"
-      # SUSE = ""
-      # Raspbian = "󰐿"
-      # Mint = "󰣭"
-      # Macos = "󰀵"
-      # Manjaro = ""
-      # Linux = "󰌽"
-      # Gentoo = "󰣨"
-      # Fedora = "󰣛"
-      # Alpine = ""
-      # Amazon = ""
-      # Android = ""
-      # Arch = "󰣇"
-      # Artix = "󰣇"
-      # EndeavourOS = ""
-      # CentOS = ""
-      # Debian = "󰣚"
-      # Redhat = "󱄛"
-      # RedHatEnterprise = "󱄛"
-      # Pop = ""
-
       username = {
         show_always = true;
         style_user = "bg:color_orange fg:color_fg0";
         style_root = "bg:color_orange fg:color_fg0";
-        format = "[ $user ]($style)";
+        format = "[  $user ]($style)";
+      };
+
+      hostname = {
+        disabled = false;
+        format = "╱[  $hostname ]($style)";
+        trim_at = ".";
+        style = "bg:color_orange fg:color_fg0";
       };
 
       directory = {
         style = "fg:color_fg0 bg:color_yellow";
-        format = "[ $path ]($style)";
+        read_only_style = "fg:color_fg0 bg:color_yellow";
+        # format = "[ $path ]($style)";
+        format = "[$path]($style)[$read_only]($read_only_style)";
         read_only = "";
+        home_symbol = "󱂵";
         truncation_length = 3;
         truncation_symbol = "…/";
         substitutions = {
@@ -102,8 +99,28 @@
           Downloads = " ";
           Music = "󰝚 ";
           Pictures = " ";
-          Developer = "󰲋 ";
+          Source = "󰲋 ";
         };
+      };
+
+      direnv = {
+        disabled = false;
+        format = "╱ direnv [$loaded/$allowed ]($style)";
+        allowed_msg = "";
+        not_allowed_msg = "";
+        denied_msg = "";
+        loaded_msg = "";
+        unloaded_msg = "";
+      };
+
+      nix_shell = {
+        disabled = false;
+        format = "╱ nix-shell [$symbol $state(\\($name\\)) ]($style)";
+        symbol = "";
+        style = "bold cyan";
+        impure_msg = "[ ](bold red)";
+        pure_msg = "[ ](bold green)";
+        unknown_msg = "[ ](dimmed yellow)";
       };
 
       git_branch = {
@@ -186,6 +203,14 @@
         time_format = "%R";
         style = "bg:color_bg1";
         format = "[[  $time ](fg:color_fg0 bg:color_bg1)]($style)";
+      };
+
+      cmd_duration = {
+        disabled = false;
+        min_time = 500;
+        show_milliseconds = false;
+        format = "╱ [took](dimmed)[ $duration ]($style)";
+        style = "dimmed yellow";
       };
 
       line_break = {
