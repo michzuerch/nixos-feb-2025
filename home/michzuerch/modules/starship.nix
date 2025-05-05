@@ -10,66 +10,96 @@
       add_newline = false;
       command_timeout = 2000;
       format = lib.concatStrings [
-        "[](color_orange)"
-        "$os"
-        "$hostname"
-        "$username (config.lib.stylix.colors.base00)"
-        "[](bg:color_yellow fg:color_orange)"
+        "[](fg:#303030)"
+        "$os(bg:#707070 fg:#303030)"
+        "[](bg:#303030 fg:#707070)"
         "$directory"
-        "[](fg:color_yellow bg:color_aqua)"
         "$git_branch"
         "$git_status"
-        "[](fg:color_aqua bg:color_blue)"
-        "$c"
-        "$cpp"
-        "$rust"
-        "$golang"
-        "$nodejs"
-        "$php"
-        "$java"
-        "$kotlin"
-        "$haskell"
-        "$python"
-        "[](fg:color_blue bg:color_bg3)"
-        "$docker_context"
-        "$conda"
-        "$pixi"
-        "[](fg:color_bg3 bg:color_bg1)"
-        "$time"
+        "[](#303030)"
+        "$fill"
+        "[](#303030)"
+        "$status"
         "$cmd_duration"
-        "[ ](fg:color_bg1)"
-        "$direnv"
-        "$nix_shell"
+        "[ ](bg:#303030 fg:#909090)"
         "$username"
-        "$line_break"
-        "$character"
+        "$hostname"
+        "[ ](bg:#303030 fg:#909090)"
+        "$time"
+        "[ ](bg:#303030 fg:#567676)"
+
+        # "[](color_orange)"
+        # "$os"
+        # "$hostname"
+        # "$username (config.lib.stylix.colors.base00)"
+        # "[](bg:color_yellow fg:color_orange)"
+        # "$directory"
+        # "[](fg:color_yellow bg:color_aqua)"
+        # "$git_branch"
+        # "$git_status"
+        # "[](fg:color_aqua bg:color_blue)"
+        # "$c"
+        # "$cpp"
+        # "$rust"
+        # "$golang"
+        # "$nodejs"
+        # "$php"
+        # "$java"
+        # "$kotlin"
+        # "$haskell"
+        # "$python"
+        # "[](fg:color_blue bg:color_bg3)"
+        # "$docker_context"
+        # "$conda"
+        # "$pixi"
+        # "[](fg:color_bg3 bg:color_bg1)"
+        # "$time"
+        # "$cmd_duration"
+        # "[ ](fg:color_bg1)"
+        # "$direnv"
+        # "$nix_shell"
+        # "$username"
+        # "$line_break"
+        # "$character"
       ];
 
-      palette = "gruvbox_dark";
-
-      palettes = {
-        gruvbox_dark = {
-          # color_fg0 = "#fbf1c7";
-          color_fg0 = config.lib.stylix.colors.base00;
-          color_bg1 = "#3c3836";
-          color_bg3 = "#665c54";
-          color_blue = "#458588";
-          color_aqua = "#689d6a";
-          color_green = "#98971a";
-          color_orange = "#d65d0e";
-          color_purple = "#b16286";
-          color_red = "#cc241d";
-          color_yellow = "#d79921";
-        };
+      fill = {
+        symbol = " ";
       };
 
       os = {
         disabled = false;
-        style = "bg:color_orange fg:color_fg0";
+        style = "bg:#303030 fg:#769ff0";
         symbols = {
           NixOS = "❄️ ";
         };
       };
+
+      directory = {
+        format = "[$path](bg:#303030 fg:#707070)[$read_only](bg:#303030 fg:#d79921)";
+        read_only = "";
+        home_symbol = "󱂵";
+        truncation_length = 3;
+        truncation_symbol = "…/";
+        substitutions = {
+          Documents = "󰈙 ";
+          Downloads = " ";
+          Music = "󰝚 ";
+          Pictures = " ";
+          Source = "󰲋 ";
+        };
+      };
+
+      # git_branch = {
+      #   symbol = "";
+      #   style = "bg:#303030 fg:#707070";
+      #   format = "on [$symbol$branch]";
+      # };
+
+      # git_status = {
+      #   style = "bg:color_aqua";
+      #   format = "Status [[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)";
+      # };
 
       username = {
         show_always = true;
@@ -83,24 +113,6 @@
         format = "╱[  $hostname ]($style)";
         trim_at = ".";
         style = "bg:color_orange fg:color_fg0";
-      };
-
-      directory = {
-        style = "fg:color_fg0 bg:color_yellow";
-        read_only_style = "fg:color_fg0 bg:color_yellow";
-        # format = "[ $path ]($style)";
-        format = "[$path]($style)[$read_only]($read_only_style)";
-        read_only = "";
-        home_symbol = "󱂵";
-        truncation_length = 3;
-        truncation_symbol = "…/";
-        substitutions = {
-          Documents = "󰈙 ";
-          Downloads = " ";
-          Music = "󰝚 ";
-          Pictures = " ";
-          Source = "󰲋 ";
-        };
       };
 
       direnv = {
@@ -121,17 +133,6 @@
         impure_msg = "[ ](bold red)";
         pure_msg = "[ ](bold green)";
         unknown_msg = "[ ](dimmed yellow)";
-      };
-
-      git_branch = {
-        symbol = "";
-        style = "bg:color_aqua";
-        format = "[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)";
-      };
-
-      git_status = {
-        style = "bg:color_aqua";
-        format = "[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)";
       };
 
       nodejs = {

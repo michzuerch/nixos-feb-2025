@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   stylix = {
     enable = true;
     # Find your colorscheme with this gallery https://tinted-theming.github.io/tinted-gallery/
