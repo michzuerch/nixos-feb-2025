@@ -26,7 +26,7 @@
       };
       k9s.enable = true;
       kde = {
-        enable = true;
+        enable = false;
         useWallpaper = false;
         decorations = "org.kde.breeze";
       };
