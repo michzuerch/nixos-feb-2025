@@ -36,7 +36,6 @@
         "$hostname"
         "[ ](bg:#303030 fg:#909090)"
         "$time"
-        "[ ](bg:#303030 fg:#567676)"
         "$line_break"
         "$character"
       ];
@@ -47,7 +46,7 @@
 
       os = {
         disabled = false;
-        style = "bg:#303030 fg:#769ff0";
+        style = "fg:#769ff0 bg:#303030";
         symbols = {
           NixOS = "❄️ ";
         };
@@ -72,7 +71,7 @@
 
       git_branch = {
         symbol = "";
-        format = "[ $symbol( $branch) ](bg:#303030 fg:#707070)";
+        format = "[ $symbol( $branch) ](fg:#FFFFFF bg:#303030)";
       };
 
       git_status = {
@@ -83,12 +82,12 @@
         conflicted = "";
         renamed = "󰑕";
         deleted = "󰆳";
-        format = "([\\[$all_status$ahead_behind\\] ](bg:#303030 fg:#707070))";
+        format = "([\\[$all_status$ahead_behind\\] ](fg:#FFFFFF bg:#303030 ))";
       };
 
       git_metrics = {
-        added_style = "bg:#303030 fg:#707070";
-        deleted_style = "bg:#303030 fg:#707070";
+        added_style = "fg:#FFFFFF bg:#303030";
+        deleted_style = "fg:#FFFFFF bg:#303030";
         format = "metrics [+$added]($added_style)/[-$deleted]($deleted_style) ";
       };
 
@@ -97,7 +96,7 @@
         cherry_pick = "";
         merge = "";
         bisect = "󱁉";
-        style = "bg:#303030 fg:#707070";
+        style = "fg:#FFFFFF bg:#303030";
         format = ''[\($state( $progress_current/$progress_total) \)]($style)'';
       };
 
@@ -110,9 +109,11 @@
 
       hostname = {
         disabled = false;
+        ssh_only = false;
         trim_at = ".";
-        style = "bg:#303030 fg:#FFFFFF";
-        format = "╱[  $hostname ]($style)";
+        ssh_symbol = "󰍂";
+        style = "fg:#FFFFFF bg:#303030";
+        format = "[  $ssh_symbol $hostname ]($style)";
       };
 
       direnv = {
@@ -186,33 +187,33 @@
 
       docker_context = {
         symbol = "";
-        style = "bg:#303030 fg:#707070";
-        format = "[[ $symbol( $context) ](bg:#303030 fg:#707070)]($style)";
+        style = "fg:#FFFFFF bg:#303030";
+        format = "[[ $symbol( $context) ](fg:#FFFFFF bg:#303030)]($style)";
       };
 
       conda = {
-        style = "bg:#303030 fg:#707070";
-        format = "[[ $symbol( $environment) ](bg:#303030 fg:#707070)]($style)";
+        style = "fg:#FFFFFF bg:#303030";
+        format = "[[ $symbol( $environment) ](fg:#FFFFFF bg:#303030)]($style)";
       };
 
       pixi = {
-        style = "bg:#303030 fg:#707070";
-        format = "[[ $symbol( $version)( $environment) ](bg:#303030 fg:#707070)]($style)";
+        style = "fg:#FFFFFF bg:#303030";
+        format = "[[ $symbol( $version)( $environment) ](fg:#FFFFFF bg:#303030)]($style)";
       };
 
       time = {
         disabled = false;
         time_format = "%R";
-        style = "bg:#303030 fg:#707070";
-        format = "[[  $time ](bg:#303030 fg:#707070)]($style)";
+        style = "fg:#FFFFFF bg:#303030";
+        format = "[  $time ]($style)";
       };
 
       cmd_duration = {
         disabled = false;
         min_time = 500;
         show_milliseconds = false;
-        format = "╱ [took](dimmed)[ $duration ]($style)";
-        style = "bg:#303030 fg:#707070";
+        style = "fg:#FFFFFF bg:#303030";
+        format = "[took](dimmed)[ $duration ]($style)";
       };
 
       line_break = {
