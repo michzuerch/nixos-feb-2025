@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   nix = {
     settings = {
       builders-use-substitutes = true;
@@ -18,5 +18,13 @@
         "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
       ];
     };
+  };
+  nixpkgs.config = {
+    allowUnfree = true;
+    config.allowUnfreePredicate = pkg:
+      builtins.elem (lib.getName pkg) [
+        "cursor"
+        "windsurf"
+      ];
   };
 }

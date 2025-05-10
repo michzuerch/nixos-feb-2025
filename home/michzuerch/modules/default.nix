@@ -1,5 +1,6 @@
 {
   imports = [
+    ./nixpkgs.nix
     ./cli
     ./alacritty.nix
     ./cursor.nix
@@ -28,6 +29,7 @@
     ./vscodium.nix
     ./wallpapers.nix
     # ./wezterm.nix #Broken for intel vulcan
+    ./windsurf.nix #Unfree package
     ./xdg.nix
     ./zellij.nix
     ./zoxide.nix

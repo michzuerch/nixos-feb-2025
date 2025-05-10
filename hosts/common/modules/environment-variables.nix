@@ -4,6 +4,7 @@
   };
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    DIRENV_LOG_FORMAT = "";
     # SPOTIFY_PATH = "${pkgs.spotify}/";
     # JDK_PATH = "${pkgs.jdk}/";
     # NODEJS_PATH = "${pkgs.nodePackages_latest.nodejs}/";
