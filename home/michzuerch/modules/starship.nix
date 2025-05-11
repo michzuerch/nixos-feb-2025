@@ -53,8 +53,8 @@
       };
 
       directory = {
-        read_only = "";
-        home_symbol = "󱂵";
+        read_only = "  ";
+        home_symbol = "󱂵 ";
         truncation_length = 3;
         truncation_symbol = "…/";
         truncate_to_repo = true;
@@ -66,7 +66,7 @@
           Source = "󰲋 ";
         };
         style = "fg:#FFFFFF bg:#303030";
-        format = "[$path]($style)[$read_only](bg:#303030 fg:#d79921)";
+        format = " [$path]($style)[$read_only](bg:#303030 fg:#d79921)";
       };
 
       git_branch = {
@@ -74,16 +74,16 @@
         format = "[ $symbol( $branch) ](fg:#FFFFFF bg:#303030)";
       };
 
-      git_status = {
-        ahead = "⇡$\{$count}";
-        diverged = "⇕⇡\${ahead_count}⇣\${behind_count}";
-        behind = "⇣\${count}";
-        staged = "[$count]";
-        conflicted = "";
-        renamed = "󰑕";
-        deleted = "󰆳";
-        format = "([\\[$all_status$ahead_behind\\] ](fg:#FFFFFF bg:#303030 ))";
-      };
+      #      git_status = {
+      #        ahead = "⇡{$count}";
+      #        diverged = "⇕⇡${ahead_count}⇣${behind_count}";
+      #        behind = "⇣${count}";
+      #        staged = "[$count]";
+      #        conflicted = "";
+      #        renamed = "󰑕";
+      #        deleted = "󰆳";
+      #        format = "([\\[$all_status$ahead_behind\\] ](fg:#FFFFFF bg:#303030 ))";
+      #      };
 
       git_metrics = {
         added_style = "fg:#FFFFFF bg:#303030";
@@ -102,8 +102,8 @@
 
       username = {
         show_always = true;
-        style_user = "bg:#303030 fg:#707070";
-        style_root = "bg:#303030 fg:#707070";
+        style_user = "bg:#303030 fg:#FFFFFF";
+        style_root = "bg:#303030 fg:red";
         format = "[  $user ]($style)";
       };
 
@@ -213,7 +213,7 @@
         min_time = 500;
         show_milliseconds = false;
         style = "fg:#FFFFFF bg:#303030";
-        format = "[took](dimmed)[ $duration ]($style)";
+        format = "[ 󱇝 $duration ]($style)";
       };
 
       line_break = {

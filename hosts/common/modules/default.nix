@@ -12,6 +12,7 @@
     ./fonts.nix
     ./fwupd.nix
     ./gc.nix
+    ./gnome.nix
     ./graphics.nix
     ./hacking.nix
     ./hyprland.nix
@@ -37,6 +38,7 @@
     ./virtualisation.nix
     ./wine.nix
     #./xdg.nix
+    ./xfce.nix
     ./yubikey.nix
     ./zram.nix
     ./zsh.nix
