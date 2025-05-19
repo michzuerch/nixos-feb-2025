@@ -1,6 +1,7 @@
 {
   imports = [
     ./hyprland
+    # ./ags.nix
     ./hyprpaper.nix
     ./pyprland.nix
     # ./hyprpanel.nix

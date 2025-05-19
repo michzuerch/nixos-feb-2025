@@ -23,6 +23,7 @@
     ../modules/networking.nix
     ../modules/nh.nix
     ../modules/nix-settings.nix
+    ../modules/nix-ld.nix
     ../modules/nix-tools.nix
     ../modules/nvf.nix
     ../modules/ollama.nix

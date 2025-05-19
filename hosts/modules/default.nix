@@ -22,6 +22,7 @@
     ./macchanger.nix
     ./networking.nix
     ./nh.nix
+    ./nix-ld.nix
     ./nix-settings.nix
     ./nix-tools.nix
     ./nvf.nix

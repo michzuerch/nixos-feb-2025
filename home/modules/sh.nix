@@ -20,7 +20,7 @@
 
     broot.enable = true;
 
-    gitui.enable = true; #Temporary disbled for stylix
+    gitui.enable = true;
 
     dircolors.enable = true;
 
@@ -32,14 +32,16 @@
 
     direnv = {
       enable = true;
+      silent = true;
+      # enableFishIntegration = true;
       enableZshIntegration = true;
-      nix-direnv.enable = false;
+      nix-direnv.enable = true;
     };
 
     eza = {
       enable = true;
       enableZshIntegration = true;
-      enableFishIntegration = false;
+      enableFishIntegration = true;
       colors = "always";
       git = true;
       icons = "always";
@@ -55,12 +57,11 @@
   };
 
   home.packages = with pkgs; [
-    # bandwhich
+    bandwhich
     bat
     chatgpt-cli
     cowsay
     delta
-    direnv
     du-dust
     doggo
     gping

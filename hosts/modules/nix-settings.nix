@@ -27,6 +27,7 @@
           "cursor"
           "windsurf"
         ];
+      android_sdk.accept_license = true;
     };
     permittedInsecurePackages = ["ventoy-1.1.05"];
   };

@@ -22,6 +22,7 @@
     ../modules/macchanger.nix
     ../modules/networking.nix
     ../modules/nh.nix
+    ../modules/nix-ld.nix
     ../modules/nix-settings.nix
     ../modules/nix-tools.nix
     ../modules/nvf.nix

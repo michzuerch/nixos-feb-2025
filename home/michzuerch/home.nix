@@ -9,7 +9,8 @@
     inputs.chaotic.homeManagerModules.default
     inputs.nix-index-database.hmModules.nix-index
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
-    ./profiles/complete.nix
+    inputs.ags.homeManagerModules.default
+    ../profiles/complete.nix
   ];
   home = {
     username = "michzuerch";
@@ -18,8 +19,8 @@
     enableNixpkgsReleaseCheck = false;
     packages = with pkgs; [
       nautilus
-      libsForQt5.dolphin
-      libsForQt5.dolphin-plugins
+      kdePackages.dolphin
+      kdePackages.dolphin-plugins
       lxappearance
       showmethekey
     ];

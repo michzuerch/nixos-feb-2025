@@ -1,10 +1,10 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    #digikam #Failed to build
+    digikam
     jellyfin-ffmpeg
     handbrake
     kodi-wayland
-    libsForQt5.kdenlive
+    kdePackages.kdenlive
     losslesscut-bin
     qmediathekview
     mpv
