@@ -118,7 +118,7 @@
         };
         modules = [
           ./hosts/ThinkpadNomad/configuration.nix
-          ./hosts/ThinkpadNomad/profiles/complete.nix
+          ./hosts/profiles/complete.nix
           # {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           inputs.nvf.nixosModules.default
           inputs.nix-index-database.nixosModules.nix-index
@@ -156,7 +156,7 @@
         };
         modules = [
           ./hosts/VM/configuration.nix
-          ./hosts/VM/profiles/complete.nix
+          ./hosts/profiles/complete.nix
           inputs.nvf.nixosModules.default
           inputs.nix-index-database.nixosModules.nix-index
           inputs.nur.modules.nixos.default
