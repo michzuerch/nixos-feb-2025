@@ -13,7 +13,7 @@
         modules-left = ["hyprland/workspaces"];
         modules-center = ["hyprland/window"];
         # modules-right = ["cpu" "memory" "network" "tray"];
-        modules-right = ["idle_inhibitor" "custom/notification" "pulseaudio" "backlight" "network" "bluetooth" "battery" "clock" "custom/power" "tray"];
+        modules-right = ["cpu" "memory" "custom/weather" "idle_inhibitor" "custom/notification" "pulseaudio" "backlight" "network" "bluetooth" "battery" "clock" "tray" "custom/power"];
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -105,7 +105,7 @@
         };
         "custom/notification" = {
           tooltip = false;
-          format = "{} {icon}";
+          format = "{icon} {}";
           "format-icons" = {
             notification = "󱅫";
             none = "";
