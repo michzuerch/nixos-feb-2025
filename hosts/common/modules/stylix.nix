@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   stylix = {
     enable = true;
+    enableReleaseChecks = false;
     # Find your colorscheme with this gallery https://tinted-theming.github.io/tinted-gallery/
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
     autoEnable = false;

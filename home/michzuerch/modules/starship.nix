@@ -7,9 +7,9 @@
       command_timeout = 2000;
       format = lib.concatStrings [
         "[](#303030)"
-        "$os(bg:#707070 fg:#303030)"
-        "[](bg:#303030 fg:#707070)"
-        "$directory"
+        "$os(fg:#303030 bg:#707070)"
+        "[](fg:#707070 bg:#303030)"
+        "$directory(fg:#707070 bg:#303030)"
         "$git_branch(bg:#707070 fg:#303030)"
         "$git_metrics(bg:#707070 fg:#303030)"
         "$git_status(bg:#707070 fg:#303030)"
@@ -66,7 +66,7 @@
           Source = "󰲋 ";
         };
         style = "fg:#FFFFFF bg:#303030";
-        format = " [$path]($style)[$read_only](bg:#303030 fg:#d79921)";
+        format = "[$path]($style)[$read_only](bg:#303030 fg:#d79921)";
       };
 
       git_branch = {

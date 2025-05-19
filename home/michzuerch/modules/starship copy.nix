@@ -33,7 +33,6 @@
         "$terraform"
         "$cmd_duration"
         "$jobs"
-        "╱"
         "$line_break"
         "$directory"
         "$status"
@@ -103,13 +102,13 @@
       username = {
         style_user = "white bold";
         style_root = "black bold";
-        format = "╱[  $user ]($style)";
+        format = "[  $user ]($style)";
         disabled = true;
       };
 
       hostname = {
         disabled = true;
-        format = "╱[  $hostname ]($style)";
+        format = "[  $hostname ]($style)";
         trim_at = ".";
         style = "dimmed red";
       };

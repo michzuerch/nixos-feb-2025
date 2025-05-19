@@ -13,7 +13,7 @@
         modules-left = ["hyprland/workspaces"];
         modules-center = ["hyprland/window"];
         # modules-right = ["cpu" "memory" "network" "tray"];
-        modules-right = ["idle_inhibitor" "pulseaudio" "backlight" "network" "bluetooth" "battery" "clock" "custom/power" "tray"];
+        modules-right = ["idle_inhibitor" "custom/notification" "pulseaudio" "backlight" "network" "bluetooth" "battery" "clock" "custom/power" "tray"];
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -103,6 +103,27 @@
           exec = "wttrbar --location Radolfzell";
           "return-type" = "json";
         };
+        "custom/notification" = {
+          tooltip = false;
+          format = "{} {icon}";
+          "format-icons" = {
+            notification = "󱅫";
+            none = "";
+            "dnd-notification" = " ";
+            "dnd-none" = "󰂛";
+            "inhibited-notification" = " ";
+            "inhibited-none" = "";
+            "dnd-inhibited-notification" = " ";
+            "dnd-inhibited-none" = " ";
+          };
+          "return-type" = "json";
+          "exec-if" = "which swaync-client";
+          exec = "swaync-client -swb";
+          "on-click" = "sleep 0.1 && swaync-client -t -sw";
+          "on-click-right" = "sleep 0.1 && swaync-client -d -sw";
+          escape = true;
+        };
+
         idle_inhibitor = {
           format = "{icon}";
           "format-icons" = {
@@ -135,6 +156,11 @@
         };
       };
     };
+    style = ''
+      #workspaces button {
+        color : red;
+      }
+    '';
   };
 
   home.packages = with pkgs; [

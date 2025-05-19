@@ -21,10 +21,13 @@
   };
   nixpkgs.config = {
     allowUnfree = true;
-    config.allowUnfreePredicate = pkg:
-      builtins.elem (lib.getName pkg) [
-        "cursor"
-        "windsurf"
-      ];
+    config = {
+      allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+          "cursor"
+          "windsurf"
+        ];
+    };
+    permittedInsecurePackages = ["ventoy-1.1.05"];
   };
 }

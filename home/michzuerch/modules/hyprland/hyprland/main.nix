@@ -3,31 +3,11 @@
     enable = true;
     systemd.enable = true;
     settings = {
-      env = [
-        "NIXOS_OZONE_WL,1"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_QPA_PLATFORM,wayland"
-        "XDG_SCREENSHOTS_DIR,$HOME/screens"
-      ];
-
+      debug.disable_logs = false;
       monitor = ",1920x1080@60,auto,1";
       "$mainMod" = "SUPER";
       "$terminal" = "alacritty";
       "$fileManager" = "nemo";
-
-      exec-once = [
-        "waybar"
-        "systemctl --user start hyprpolkitagent"
-        "pypr"
-        "swaync"
-        "hyprpaper"
-        "copyq --start-server"
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
-        "nm-applet --indicator"
-      ];
 
       general = {
         gaps_in = 6;
@@ -89,7 +69,7 @@
         mouse_refocus = true;
         sensitivity = 0.6; # -1.0 - 1.0, 0 means no modification.
         touchpad = {
-          natural_scroll = true;
+          natural_scroll = false;
         };
       };
 
@@ -145,8 +125,8 @@
     hyprpicker
     hyprsysteminfo
     hyprpolkitagent
-    libsForQt5.filelight
-    libsForQt5.qt5.qtwayland
+    kdePackages.filelight
+    kdePackages.qtwayland
     networkmanagerapplet
     pamixer
     pavucontrol

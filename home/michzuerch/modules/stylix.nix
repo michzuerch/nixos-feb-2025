@@ -1,5 +1,6 @@
 {
   stylix = {
+    enableReleaseChecks = false;
     targets = {
       alacritty.enable = true;
       bat.enable = true;
@@ -26,7 +27,7 @@
       };
       k9s.enable = true;
       kde = {
-        enable = false;
+        enable = true;
         useWallpaper = false;
         decorations = "org.kde.breeze";
       };

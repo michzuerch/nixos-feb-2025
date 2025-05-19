@@ -1,5 +1,5 @@
 {
-  description = "nixos michzuerch march 2025";
+  description = "nixos michzuerch may 2025";
 
   inputs = {
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
@@ -14,15 +14,11 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # hyprpanel = {
-    #   url = "github:Jas-SinghFSU/HyprPanel";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # hypr-dynamic-cursors = {
-    #   url = "github:VirtCode/hypr-dynamic-cursors";
-    #   inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
-    # };
-    # hyprddm.url = "github:maotseantonio/hyprddm";
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprddm.url = "github:maotseantonio/hyprddm";
     nsearch = {
       url = "github:niksingh710/nsearch";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -108,10 +104,10 @@
         jq
         pciutils
         tree
-        tealdeer
         fastfetch
         gtop
         sbctl
+        home-manager
       ];
     };
 
@@ -122,7 +118,7 @@
         };
         modules = [
           ./hosts/ThinkpadNomad/configuration.nix
-          ./hosts/ThinkpadNomad/modules
+          ./hosts/ThinkpadNomad/profiles/complete.nix
           # {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           inputs.nvf.nixosModules.default
           inputs.nix-index-database.nixosModules.nix-index
@@ -141,7 +137,7 @@
               extraSpecialArgs = {
                 inherit system outputs inputs;
               };
-              backupFileExtension = "backup";
+              backupFileExtension = "bkp";
               users = {
                 michzuerch = {
                   imports = [
@@ -160,7 +156,7 @@
         };
         modules = [
           ./hosts/VM/configuration.nix
-          ./hosts/VM/modules
+          ./hosts/VM/profiles/complete.nix
           inputs.nvf.nixosModules.default
           inputs.nix-index-database.nixosModules.nix-index
           inputs.nur.modules.nixos.default

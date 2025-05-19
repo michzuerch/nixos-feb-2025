@@ -48,6 +48,10 @@
         "--header"
       ];
     };
+    tealdeer = {
+      enableAutoUpdates = true;
+      enable = true;
+    };
   };
 
   home.packages = with pkgs; [
@@ -77,7 +81,6 @@
     pwgen
     sd
     sqlite
-    tealdeer
     tig
     p7zip
     tokei

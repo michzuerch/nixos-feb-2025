@@ -48,22 +48,25 @@
         "bar.layouts" = {
           "0" = {
             left = ["dashboard" "workspaces"];
-            middle = ["windowtitle" "media"];
-            right = ["volume" "network" "systray" "notifications"];
+            middle = ["windowtitle"];
+            right = ["hypridle" "volume" "network" "battery" "systray" "notifications"];
           };
         };
       };
 
-      menus.clock = {
-        time = {
-          military = true;
-          hideSeconds = true;
+      menus = {
+        clock = {
+          time = {
+            military = true;
+            hideSeconds = true;
+          };
+          weather.unit = "metric";
         };
-        weather.unit = "metric";
+        dashboard = {
+          directories.enabled = false;
+          stats.enable_gpu = false;
+        };
       };
-
-      menus.dashboard.directories.enabled = false;
-      menus.dashboard.stats.enable_gpu = true;
 
       theme = {
         font = {
