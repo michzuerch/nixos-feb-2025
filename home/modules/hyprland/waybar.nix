@@ -16,12 +16,20 @@
         modules-right = ["cpu" "memory" "custom/weather" "idle_inhibitor" "custom/notification" "pulseaudio" "backlight" "network" "bluetooth" "battery" "clock" "tray" "custom/power"];
 
         "hyprland/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            urgent = "";
+            active = ""; # focused workspace on current monitor
+            visible = ""; # focused workspace on other monitors
+            default = "";
+            empty = ""; # persistent (created by this plugin)
+          };
           disable-scroll = true;
           show-special = true;
           special-visible-only = true;
           all-outputs = false;
           on-click = "activate";
-          format = "{id}";
+          # format = "{id}";
           persistent-workspaces = {
             "*" = 3;
           };
