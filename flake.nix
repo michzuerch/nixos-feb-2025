@@ -81,6 +81,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.disko.follows = "disko";
     };
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

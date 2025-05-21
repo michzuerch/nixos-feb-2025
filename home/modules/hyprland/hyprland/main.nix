@@ -4,19 +4,9 @@
     systemd.enable = true;
     settings = {
       debug.disable_logs = false;
-      monitor = ",1920x1080@60,auto,1";
       "$mainMod" = "SUPER";
       "$terminal" = "alacritty";
       "$fileManager" = "nemo";
-
-      general = {
-        gaps_in = 6;
-        gaps_out = 12;
-        border_size = 2;
-        resize_on_border = true;
-        allow_tearing = false;
-        layout = "master";
-      };
 
       xwayland = {
         force_zero_scaling = true;
