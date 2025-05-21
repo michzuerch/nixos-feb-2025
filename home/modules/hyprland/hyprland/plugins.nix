@@ -1,8 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   wayland.windowManager.hyprland = {
-    plugins = with pkgs; [
-      hyprlandPlugins.hypr-dynamic-cursors
-      hyprlandPlugins.hyprexpo
+    plugins = [
+      pkgs.hyprlandPlugins.hypr-dynamic-cursors
+      pkgs.hyprlandPlugins.hyprexpo
+      inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
     ];
     settings = {
       "plugin:dynamic-cursors" = {

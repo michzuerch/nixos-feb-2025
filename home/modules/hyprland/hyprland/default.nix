@@ -9,5 +9,6 @@
     ./general.nix
     ./monitors.nix
     ./plugins.nix
+    ./workspaces.nix
   ];
 }
