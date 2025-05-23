@@ -15,15 +15,11 @@
       input = {
         kb_layout = "us";
         follow_mouse = 1;
-        natural_scroll = true;
         repeat_rate = 50;
         repeat_delay = 350;
         float_switch_override_focus = 1;
         mouse_refocus = true;
         sensitivity = 0.6; # -1.0 - 1.0, 0 means no modification.
-        touchpad = {
-          natural_scroll = false;
-        };
       };
 
       gestures = {

@@ -3,7 +3,7 @@
     exec-once = [
       "waybar"
       "systemctl --user start hyprpolkitagent"
-      "pypr"
+      "pypr --debug /tmp/pypr.log"
       # "swaync"
       "hyprpaper"
       "copyq --start-server"

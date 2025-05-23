@@ -8,7 +8,7 @@
     ./exec.nix
     ./general.nix
     ./monitors.nix
-    ./plugins.nix
+    ./plugins
     ./workspaces.nix
   ];
 }
