@@ -36,6 +36,8 @@
     ../modules/stylix.nix
     ../modules/syncthing.nix
     ../modules/systemtools.nix
+    ../modules/time.nix
+
     ../modules/ventoy.nix
     ../modules/virtualisation.nix
     ../modules/wine.nix

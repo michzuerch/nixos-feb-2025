@@ -7,6 +7,7 @@
     plugins = [
       pkgs.hyprlandPlugins.hypr-dynamic-cursors
       pkgs.hyprlandPlugins.hyprexpo
+      inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
       inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
     ];
     settings = {
@@ -77,6 +78,13 @@
         enable_gesture = true; # laptop touchpad, 4 fingers
         gesture_distance = 300; # how far is the "max"
         gesture_positive = true; # positive = swipe down. Negative = swipe up.
+      };
+
+      "plugin:split-monitor-workspaces" = {
+        count = 5;
+        keep_focused = 0;
+        enable_notifications = 0;
+        enable_persistent_workspaces = 1;
       };
     };
   };

@@ -36,6 +36,7 @@
     ./stylix.nix
     ./syncthing.nix
     ./systemtools.nix
+    ./time.nix
     ./ventoy.nix
     ./virtualisation.nix
     ./wine.nix

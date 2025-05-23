@@ -14,6 +14,10 @@
       };
       displayManager.lightdm = {
         enable = true;
+        #greeter = {
+        #  enable = true;
+        #  package = pkgs.lightdm-slick-greeter;
+        #};
         background = lib.mkDefault ./wallpapers/nixos-dark.jpg;
       };
     };

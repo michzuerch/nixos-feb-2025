@@ -18,6 +18,10 @@
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    Hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
     ags.url = "github:aylur/ags";
     hyprddm.url = "github:maotseantonio/hyprddm";
     nsearch = {
